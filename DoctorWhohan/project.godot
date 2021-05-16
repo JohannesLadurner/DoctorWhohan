@@ -16,7 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="DoctorWhohan"
+run/main_scene="res://scenes/Game.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=900
+window/size/resizable=false
 
 [physics]
 
