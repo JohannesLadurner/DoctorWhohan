@@ -30,4 +30,5 @@ frames = SubResource( 2 )
 animation = "test"
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+show_behind_parent = true
 position = Vector2( 0.625, -0.25 )

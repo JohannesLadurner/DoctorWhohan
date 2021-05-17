@@ -9,12 +9,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1053.67, 601.79, 0, 0, 0, 0, 3.7053, 602.541 )
 }
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node"]
 script = ExtResource( 3 )
 Enemy = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 166.5, 596.5 )
+position = Vector2( 42.8096, 597.081 )
 
 [node name="EnemyTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -27,4 +27,5 @@ position = Vector2( 1053.67, 586.79 )
 rotation = 3.14086
 v_offset = -15.0
 rotate = false
+[connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]

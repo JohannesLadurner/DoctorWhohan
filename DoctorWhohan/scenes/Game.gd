@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 export (PackedScene) var Enemy
@@ -25,3 +25,7 @@ func _on_EnemyTimer_timeout():
 	
 	
 	
+
+#Function die Aufgerufen wird, wenn Patient die hitbox des Doktors trifft
+func _on_Player_hit():
+	$Player.hide()
