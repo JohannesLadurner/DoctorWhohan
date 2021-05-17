@@ -14,6 +14,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$Score.text = str(score)
 	checkLife()
 	
 
@@ -33,6 +34,7 @@ func _on_EnemyTimer_timeout():
 
 #Function die Aufgerufen wird, wenn Patient die hitbox des Doktors trifft
 func _on_Player_hit():
+	score = score +1
 	life = life -1
 	
 #Wird aufgerufen, wenn alle Leben verbraucht sind
