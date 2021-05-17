@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Game.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -27,5 +28,37 @@ position = Vector2( 1053.67, 586.79 )
 rotation = 3.14086
 v_offset = -15.0
 rotate = false
+
+[node name="LifeOne" type="TextureRect" parent="."]
+anchor_top = 0.00250348
+anchor_bottom = 0.00250348
+margin_left = 9.249
+margin_top = 7.99791
+margin_right = 73.249
+margin_bottom = 71.9979
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LifeTwo" type="TextureRect" parent="."]
+margin_left = 87.109
+margin_top = 9.5
+margin_right = 151.109
+margin_bottom = 73.5
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LifeThree" type="TextureRect" parent="."]
+margin_left = 168.973
+margin_top = 9.5
+margin_right = 232.973
+margin_bottom = 73.5
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
