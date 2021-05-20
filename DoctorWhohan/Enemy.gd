@@ -3,7 +3,7 @@ extends RigidBody2D
 
 export var min_speed = 150  # min speed
 export var max_speed = 250  # max speed
-
+var animation_name
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,5 +22,8 @@ func _on_VisibilityNotifier2D_screen_exited():
 func play_random_animation():
 	var animations = $Need.frames.get_animation_names()
 	var animation_id = randi() % animations.size()
-	var animation_name = animations[animation_id]
+	animation_name = animations[animation_id]
 	$Need.play(animation_name)
+	
+	
+	

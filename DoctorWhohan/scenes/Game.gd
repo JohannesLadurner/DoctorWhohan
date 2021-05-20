@@ -4,6 +4,7 @@ extends Node
 export (PackedScene) var Enemy
 var score #Punktestand
 var life  #Leben 
+var enemys = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,7 @@ func _ready():
 func _process(delta):
 	$Score.text = str(score)
 	checkLife()
+	print(enemys.size())
 	
 
 
@@ -28,14 +30,16 @@ func _on_EnemyTimer_timeout():
 	add_child(enemy)
 	enemy.position = $EnemyPath/PathFollow2D.position
 	enemy.linear_velocity = Vector2(-100,0)
-	
-	
+	enemys.append(enemy)
 	
 
 #Function die Aufgerufen wird, wenn Patient die hitbox des Doktors trifft
 func _on_Player_hit():
 	score = score +1
 	life = life -1
+	var current = enemys[0]
+	current.hide()
+	enemys.erase(current)
 	
 #Wird aufgerufen, wenn alle Leben verbraucht sind
 func gameOver():

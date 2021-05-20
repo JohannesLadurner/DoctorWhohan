@@ -16,3 +16,4 @@ func _ready():
 
 func _on_Player_body_entered(body):
 	emit_signal("hit")
+	
