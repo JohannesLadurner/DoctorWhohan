@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://patientAnimation/patientDummy.png" type="Texture" id=1]
 [ext_resource path="res://Enemy.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://needsTypes/homer-simpson.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.325, 13.6 )
@@ -11,6 +13,19 @@ animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "test",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "two",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "one",
 "speed": 5.0
 } ]
 
@@ -24,11 +39,17 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.3125, 6.9375 )
-scale = Vector2( 1.01432, 1.00651 )
+position = Vector2( -0.124998, 7.62501 )
+scale = Vector2( 1.00781, 0.992187 )
 frames = SubResource( 2 )
 animation = "test"
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 show_behind_parent = true
 position = Vector2( 0.625, -0.25 )
+
+[node name="Need" type="AnimatedSprite" parent="."]
+position = Vector2( -0.125, -31.375 )
+scale = Vector2( 0.238281, 0.214844 )
+frames = SubResource( 3 )
+animation = "two"

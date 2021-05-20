@@ -7,7 +7,9 @@ export var max_speed = 250  # max speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	randomize()
+	play_random_animation()
+	
 
 # Wenn Bildschirm verlassen wird
 func _on_VisibilityNotifier2D_screen_exited():
@@ -16,3 +18,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func play_random_animation():
+	var animations = $Need.frames.get_animation_names()
+	var animation_id = randi() % animations.size()
+	var animation_name = animations[animation_id]
+	$Need.play(animation_name)
