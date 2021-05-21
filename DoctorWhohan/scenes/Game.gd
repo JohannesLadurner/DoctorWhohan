@@ -70,7 +70,9 @@ func _on_Player_exit():
 		score = score +1
 	enemys.erase(current)
 
+#Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkInsideButton():
 	if $Player.isInside == true:
-		if Input.is_action_pressed("w"):
-			$Player.enteredBody.hit = true
+		var body = $Player.enteredBody
+		if Input.is_action_pressed("w") && body.animation_name == "one":
+			body.hit = true
