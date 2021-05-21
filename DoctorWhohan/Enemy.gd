@@ -4,6 +4,7 @@ extends RigidBody2D
 export var min_speed = 150  # min speed
 export var max_speed = 250  # max speed
 var animation_name
+var hit = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

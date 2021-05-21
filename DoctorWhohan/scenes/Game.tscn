@@ -15,7 +15,7 @@ script = ExtResource( 3 )
 Enemy = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 42.8096, 597.081 )
+position = Vector2( 142.81, 597.081 )
 
 [node name="EnemyTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -74,5 +74,6 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="exit" from="Player" to="." method="_on_Player_exit"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]

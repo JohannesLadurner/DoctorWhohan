@@ -4,7 +4,7 @@ extends Node
 export (PackedScene) var Enemy
 var score #Punktestand
 var life  #Leben 
-var enemys = []
+var enemys = [] #Enemys die gespawnt sind
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,10 +17,8 @@ func _ready():
 func _process(delta):
 	$Score.text = str(score)
 	checkLife()
-	print(enemys.size())
+	checkInsideButton()
 	
-
-
 
 func _on_EnemyTimer_timeout():
 	$EnemyPath/PathFollow2D.offset = 100
@@ -35,11 +33,8 @@ func _on_EnemyTimer_timeout():
 
 #Function die Aufgerufen wird, wenn Patient die hitbox des Doktors trifft
 func _on_Player_hit():
-	score = score +1
-	life = life -1
-	var current = enemys[0]
-	current.hide()
-	enemys.erase(current)
+	$Player.isInside = true
+	
 	
 #Wird aufgerufen, wenn alle Leben verbraucht sind
 func gameOver():
@@ -64,3 +59,18 @@ func checkLife():
 		$LifeTwo.hide()
 		$LifeThree.hide()
 		gameOver()
+
+#Wird aufgerufen, wenn der Player verlassen wird
+func _on_Player_exit():
+	$Player.isInside = false
+	var current = enemys[0]
+	if current.hit == false:
+		life = life - 1
+	else:
+		score = score +1
+	enemys.erase(current)
+
+func checkInsideButton():
+	if $Player.isInside == true:
+		if Input.is_action_pressed("w"):
+			$Player.enteredBody.hit = true
