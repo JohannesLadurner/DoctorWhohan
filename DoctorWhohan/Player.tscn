@@ -12,13 +12,13 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 20.5, 12.65 )
+extents = Vector2( 13.75, 12.65 )
 
 [node name="Player" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.25, 0.125 )
+position = Vector2( 0.375, 0 )
 frames = SubResource( 1 )
 animation = "test"
 
