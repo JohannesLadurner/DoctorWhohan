@@ -9,6 +9,9 @@ var enemys = [] #Enemys die gespawnt sind
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$EnemyTimer.start()
+	$LifeOne.play()
+	$LifeTwo.play()
+	$LifeThree.play()
 	score = 0
 	life = 3
 
@@ -73,9 +76,16 @@ func _on_Player_exit():
 
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkInsideButton():
+	
+	if Input.is_action_pressed("w") && $Player.isIdleing() == true:
+		$Player.playTestAnim()
+	
+	if Input.is_action_pressed("e") && $Player.isIdleing() == true:
+		$Player.playMaskAnim()
+	
 	if enemys.size() != 0:
 		for i in enemys.size():
-			if enemys[i].isInside == true:
+			if enemys[i].isInside == true:	
 				if Input.is_action_pressed("w") && enemys[i].animation_name == "one":
 					enemys[i].need = true
 				if Input.is_action_pressed("e") && enemys[i].animation_name == "two":

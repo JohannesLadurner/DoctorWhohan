@@ -1,14 +1,23 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Game.gd" type="Script" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://gameAnimation/Life0.png" type="Texture" id=5]
+[ext_resource path="res://gameAnimation/Life1.png" type="Texture" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1053.67, 601.79, 0, 0, 0, 0, 3.7053, 602.541 )
 }
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Life",
+"speed": 5.0
+} ]
 
 [node name="Game" type="Node"]
 script = ExtResource( 3 )
@@ -29,37 +38,23 @@ rotation = 3.14086
 v_offset = -15.0
 rotate = false
 
-[node name="LifeOne" type="TextureRect" parent="."]
-anchor_top = 0.00250348
-anchor_bottom = 0.00250348
-margin_left = 9.249
-margin_top = 7.99791
-margin_right = 73.249
-margin_bottom = 71.9979
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="LifeOne" type="AnimatedSprite" parent="."]
+position = Vector2( 35.338, 37.8578 )
+scale = Vector2( 0.729314, 0.729314 )
+frames = SubResource( 2 )
+animation = "Life"
 
-[node name="LifeTwo" type="TextureRect" parent="."]
-margin_left = 87.109
-margin_top = 9.5
-margin_right = 151.109
-margin_bottom = 73.5
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="LifeTwo" type="AnimatedSprite" parent="."]
+position = Vector2( 107.043, 39.1178 )
+scale = Vector2( 0.729314, 0.729314 )
+frames = SubResource( 2 )
+animation = "Life"
 
-[node name="LifeThree" type="TextureRect" parent="."]
-margin_left = 168.973
-margin_top = 9.5
-margin_right = 232.973
-margin_bottom = 73.5
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="LifeThree" type="AnimatedSprite" parent="."]
+position = Vector2( 177.709, 39.1178 )
+scale = Vector2( 0.729314, 0.729314 )
+frames = SubResource( 2 )
+animation = "Life"
 
 [node name="Score" type="Label" parent="."]
 anchor_left = -1.35634e-07
