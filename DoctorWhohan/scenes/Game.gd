@@ -5,9 +5,12 @@ export (PackedScene) var Enemy
 var score #Punktestand
 var life  #Leben 
 var enemys = [] #Enemys die gespawnt sind
+var unlockedNeeds = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	unlockedNeeds.append("one")
+	unlockedNeeds.append("two")
 	$EnemyTimer.start()
 	$LifeOne.play()
 	$LifeTwo.play()
@@ -29,6 +32,7 @@ func _on_EnemyTimer_timeout():
 	
 	#Spawn patient
 	var enemy = Enemy.instance()
+	enemy.init(unlockedNeeds)
 	add_child(enemy)
 	enemy.position = $EnemyPath/PathFollow2D.position
 	enemy.linear_velocity = Vector2(-100,0)
@@ -68,7 +72,7 @@ func checkLife():
 func _on_Player_exit():
 	$Player.enteredBody.isInside = false
 	var current = enemys[0]
-	if current.need == false:
+	if current.stillNeeding == false:
 		life = life - 1
 	else:
 		score = score +1
@@ -77,17 +81,14 @@ func _on_Player_exit():
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkInsideButton():
 	
-	if Input.is_action_pressed("w") && $Player.isIdleing() == true:
-		$Player.playTestAnim()
-	
-	if Input.is_action_pressed("e") && $Player.isIdleing() == true:
-		$Player.playMaskAnim()
+	#if Input.is_action_pressed("e") && $Player.isIdleing() == true:
+		#$Player.playMaskAnim()
 	
 	if enemys.size() != 0:
 		for i in enemys.size():
 			if enemys[i].isInside == true:	
 				if Input.is_action_pressed("w") && enemys[i].animation_name == "one":
-					enemys[i].need = true
+					enemys[i].stillNeeding = true
 				if Input.is_action_pressed("e") && enemys[i].animation_name == "two":
-					enemys[i].need = true
+					enemys[i].stillNeeding = true
 		
