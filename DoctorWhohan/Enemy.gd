@@ -3,7 +3,6 @@ extends RigidBody2D
 
 export var min_speed = 150  # min speed
 export var max_speed = 250  # max speed
-var animation_name
 var stillNeeding = false
 var needName
 var isInside = false
@@ -26,12 +25,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func play_random_animation():
-	var animations = $Need.frames.get_animation_names()
-	var animation_id = randi() % animations.size()
-	animation_name = animations[animation_id]
-	$Need.play(animation_name)
 	
 	
 	

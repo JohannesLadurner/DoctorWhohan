@@ -12,6 +12,9 @@ func _ready():
 	unlockedNeeds.append("Vaccine")
 	unlockedNeeds.append("Blood")
 	unlockedNeeds.append("Mask")
+	unlockedNeeds.append("Empty")
+	unlockedNeeds.append("Test")
+	unlockedNeeds.append("Pill")
 	$EnemyTimer.start()
 	$LifeOne.play()
 	$LifeTwo.play()
@@ -88,8 +91,8 @@ func checkInsideButton():
 	if enemys.size() != 0:
 		for i in enemys.size():
 			if enemys[i].isInside == true:	
-				if Input.is_action_pressed("w") && enemys[i].animation_name == "one":
-					enemys[i].stillNeeding = true
-				if Input.is_action_pressed("e") && enemys[i].animation_name == "two":
-					enemys[i].stillNeeding = true
+				if Input.is_action_pressed("w") && enemys[i].needName == "one":
+					enemys[i].stillNeeding = false
+				if Input.is_action_pressed("e") && enemys[i].needName == "two":
+					enemys[i].stillNeeding = false
 		
