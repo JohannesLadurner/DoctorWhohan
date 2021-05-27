@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/homer-simpson.png-7087e2c85ffa6b2ea4d1056435242e88.stex"
+path="res://.import/Test1.png-ca6d55eaa9f7819781e09a344d2db94b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://needsTypes/homer-simpson.png"
-dest_files=[ "res://.import/homer-simpson.png-7087e2c85ffa6b2ea4d1056435242e88.stex" ]
+source_file="res://needsTypes/test/Test1.png"
+dest_files=[ "res://.import/Test1.png-ca6d55eaa9f7819781e09a344d2db94b.stex" ]
 
 [params]
 

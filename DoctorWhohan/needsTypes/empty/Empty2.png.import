@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Vaccine1.png-6d82665878d0a8c907744ed023d1dc62.stex"
+path="res://.import/Empty2.png-74026299321b9dd1a4d7b165e0495a91.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://needsTypes/vaccine/Vaccine1.png"
-dest_files=[ "res://.import/Vaccine1.png-6d82665878d0a8c907744ed023d1dc62.stex" ]
+source_file="res://needsTypes/empty/Empty2.png"
+dest_files=[ "res://.import/Empty2.png-74026299321b9dd1a4d7b165e0495a91.stex" ]
 
 [params]
 

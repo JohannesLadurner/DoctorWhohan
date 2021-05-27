@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Vaccine1.png-6d82665878d0a8c907744ed023d1dc62.stex"
+path="res://.import/Pill3.png-1f53c21e983c87a024ec64577c4e51b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://needsTypes/vaccine/Vaccine1.png"
-dest_files=[ "res://.import/Vaccine1.png-6d82665878d0a8c907744ed023d1dc62.stex" ]
+source_file="res://needsTypes/pill/Pill3.png"
+dest_files=[ "res://.import/Pill3.png-1f53c21e983c87a024ec64577c4e51b9.stex" ]
 
 [params]
 

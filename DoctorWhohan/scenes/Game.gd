@@ -9,8 +9,9 @@ var unlockedNeeds = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	unlockedNeeds.append("one")
-	unlockedNeeds.append("two")
+	unlockedNeeds.append("Vaccine")
+	unlockedNeeds.append("Blood")
+	unlockedNeeds.append("Mask")
 	$EnemyTimer.start()
 	$LifeOne.play()
 	$LifeTwo.play()
@@ -81,8 +82,8 @@ func _on_Player_exit():
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkInsideButton():
 	
-	#if Input.is_action_pressed("e") && $Player.isIdleing() == true:
-		#$Player.playMaskAnim()
+	if Input.is_action_pressed("e") && $Player.isIdleing() == true:
+		$Player.playVaccineAnim()
 	
 	if enemys.size() != 0:
 		for i in enemys.size():
