@@ -8,7 +8,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1053.67, 601.79, 0, 0, 0, 0, 3.7053, 602.541 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1510.42, 603.761, 0, 0, 0, 0, 3.7053, 602.541 )
 }
 
 [sub_resource type="SpriteFrames" id=2]
@@ -69,7 +69,6 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="exit" from="Player" to="." method="_on_Player_exit"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
