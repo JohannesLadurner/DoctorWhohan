@@ -18,13 +18,8 @@ enum needType{
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	allNeedTypes = needType.keys()
-	
-	unlockedNeeds.append(allNeedTypes[needType.Blood])
-	unlockedNeeds.append(allNeedTypes[needType.Vaccine])
-	unlockedNeeds.append(allNeedTypes[needType.Mask])
-	unlockedNeeds.append(allNeedTypes[needType.Empty])
-	unlockedNeeds.append(allNeedTypes[needType.Test])
-	unlockedNeeds.append(allNeedTypes[needType.Pill])
+	randomize()
+	#unlockedNeeds.append(allNeedTypes[needType.Vaccine])
 	$EnemyTimer.start()
 	$LifeOne.play()
 	$LifeTwo.play()
@@ -43,6 +38,7 @@ func _process(delta):
 
 func _on_EnemyTimer_timeout():
 	$EnemyPath/PathFollow2D.offset = 100
+	addRandomNeed()
 	
 	#Spawn patient
 	var enemy = Enemy.instance()
@@ -117,3 +113,14 @@ func checkInsideButton():
 					$Player.playVaccineAnim()
 					enemys[i].gotTreated = true
 		
+func addRandomNeed():
+	allNeedTypes.shuffle()
+	if unlockedNeeds.size() < allNeedTypes.size() - 1: #never add the empty type, if list is complete ignore function
+		var index = 0
+		print(allNeedTypes)
+		#add only to list if it is not already in + not the empty type
+		while (unlockedNeeds.find(allNeedTypes[index]) > -1) || (allNeedTypes[index] == needType.keys()[needType.Empty]):
+			index = index + 1
+			
+		unlockedNeeds.append(allNeedTypes[index])
+		print(allNeedTypes[index])
