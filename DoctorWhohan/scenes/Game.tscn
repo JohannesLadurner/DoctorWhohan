@@ -69,6 +69,7 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="exit" from="Player" to="." method="_on_Player_exit"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
