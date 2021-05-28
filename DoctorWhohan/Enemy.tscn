@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://patientAnimation/ManMaskWalk/MManWalkOrange0.png" type="Texture" id=1]
 [ext_resource path="res://Enemy.gd" type="Script" id=2]
@@ -8,7 +8,9 @@
 [ext_resource path="res://needsTypes/vaccine/Vaccine1.png" type="Texture" id=6]
 [ext_resource path="res://needsTypes/vaccine/Vaccine0.png" type="Texture" id=7]
 [ext_resource path="res://needsTypes/vaccine/Vaccine2.png" type="Texture" id=8]
+[ext_resource path="res://patientAnimation/WomanWalk/WomanWalkRed1.png" type="Texture" id=9]
 [ext_resource path="res://needsTypes/empty/Empty0.png" type="Texture" id=10]
+[ext_resource path="res://patientAnimation/WomanWalk/WomanWalkRed0.png" type="Texture" id=11]
 [ext_resource path="res://needsTypes/pill/Pill3.png" type="Texture" id=12]
 [ext_resource path="res://needsTypes/test/Test0.png" type="Texture" id=13]
 [ext_resource path="res://needsTypes/pill/Pill0.png" type="Texture" id=14]
@@ -36,6 +38,11 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "MManWalkOrange",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "WomanWalkRed",
 "speed": 5.0
 } ]
 
@@ -86,7 +93,7 @@ shape = SubResource( 1 )
 position = Vector2( -1.31622, -68.3957 )
 scale = Vector2( 1.00781, 0.992187 )
 frames = SubResource( 2 )
-animation = "MManWalkOrange"
+animation = "WomanWalkRed"
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 show_behind_parent = true

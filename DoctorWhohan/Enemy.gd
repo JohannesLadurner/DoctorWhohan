@@ -16,7 +16,7 @@ func init(unlockedNeeds):
 	var rndNeed = randi() % unlockedNeeds.size()
 	needName = unlockedNeeds[rndNeed]
 	$Need.play(needName)
-	$AnimatedSprite.play("MManMaskWalk")
+	$AnimatedSprite.play("WomanWalkRed")
 	
 # Wenn Bildschirm verlassen wird
 func _on_VisibilityNotifier2D_screen_exited():
