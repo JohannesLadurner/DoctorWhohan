@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://patientAnimation/patientDummy.png" type="Texture" id=1]
+[ext_resource path="res://patientAnimation/ManMaskWalk/MManWalkOrange1.png" type="Texture" id=1]
 [ext_resource path="res://Enemy.gd" type="Script" id=2]
 [ext_resource path="res://needsTypes/vaccine/Vaccine3.png" type="Texture" id=3]
 [ext_resource path="res://needsTypes/empty/Empty2.png" type="Texture" id=4]
+[ext_resource path="res://patientAnimation/ManMaskWalk/MManWalkOrange0.png" type="Texture" id=5]
 [ext_resource path="res://needsTypes/vaccine/Vaccine1.png" type="Texture" id=6]
 [ext_resource path="res://needsTypes/vaccine/Vaccine0.png" type="Texture" id=7]
 [ext_resource path="res://needsTypes/vaccine/Vaccine2.png" type="Texture" id=8]
@@ -28,23 +29,24 @@
 [ext_resource path="res://needsTypes/mask/Mask2.png" type="Texture" id=32]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16.325, 13.6 )
+extents = Vector2( 35.4823, 80.3412 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
 "loop": true,
-"name": "test",
-"speed": 0.0
+"name": "MManWalkOrange",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 32 ), ExtResource( 20 ) ],
 "loop": true,
-"name": "Empty",
+"name": "Mask",
 "speed": 4.0
 }, {
+<<<<<<< Updated upstream
 "frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 32 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "Mask",
@@ -58,11 +60,26 @@ animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Pill",
+=======
+"frames": [ ExtResource( 27 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "Blood",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Vaccine",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "Empty",
+>>>>>>> Stashed changes
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Pill",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 15 ) ],
@@ -78,20 +95,22 @@ linear_damp = 0.0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 3.05176e-05, -64.7397 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.124998, 7.62501 )
+position = Vector2( -0.509369, -63.93 )
 scale = Vector2( 1.00781, 0.992187 )
 frames = SubResource( 2 )
-animation = "test"
+animation = "MManWalkOrange"
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 show_behind_parent = true
-position = Vector2( 0.625, -0.25 )
+position = Vector2( -0.0423737, -64.656 )
+scale = Vector2( 3.46945, 8.04128 )
 
 [node name="Need" type="AnimatedSprite" parent="."]
-position = Vector2( -0.916084, -174.884 )
+position = Vector2( 33.0322, -199.547 )
 scale = Vector2( 0.765555, 0.690256 )
 frames = SubResource( 3 )
 animation = "Test"
