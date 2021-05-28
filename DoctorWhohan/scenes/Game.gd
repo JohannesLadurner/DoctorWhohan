@@ -85,14 +85,25 @@ func _on_Player_exit():
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkInsideButton():
 	
-	if Input.is_action_pressed("e") && $Player.isIdleing() == true:
-		$Player.playVaccineAnim()
+	#if Input.is_action_pressed("e") && $Player.isIdleing() == true:
+		#$Player.playVaccineAnim()
 	
 	if enemys.size() != 0:
 		for i in enemys.size():
 			if enemys[i].isInside == true:	
-				if Input.is_action_pressed("w") && enemys[i].needName == "one":
-					enemys[i].stillNeeding = false
-				if Input.is_action_pressed("e") && enemys[i].needName == "two":
-					enemys[i].stillNeeding = false
+				if Input.is_action_pressed("w") && enemys[i].needName == "Blood" && $Player.isIdleing() == true:
+					$Player.playBloodAnim()
+					enemys[i].stillNeeding = true
+				if Input.is_action_pressed("q") && enemys[i].needName == "Mask" && $Player.isIdleing() == true:
+					$Player.playMaskAnim()
+					enemys[i].stillNeeding = true
+				if Input.is_action_pressed("e") && enemys[i].needName == "Pill" && $Player.isIdleing() == true:
+					$Player.playPillAnim()
+					enemys[i].stillNeeding = true
+				if Input.is_action_pressed("r") && enemys[i].needName == "Test" && $Player.isIdleing() == true:
+					$Player.playTestAnim()
+					enemys[i].stillNeeding = true
+				if Input.is_action_pressed("a") && enemys[i].needName == "Vaccine" && $Player.isIdleing() == true:
+					$Player.playVaccineAnim()
+					enemys[i].stillNeeding = true
 		
