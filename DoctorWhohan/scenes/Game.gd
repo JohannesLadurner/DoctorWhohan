@@ -76,7 +76,7 @@ func checkLife():
 func _on_Player_exit():
 	$Player.enteredBody.isInside = false
 	var current = enemys[0]
-	if current.stillNeeding == false:
+	if current.gotTreated == false:
 		life = life - 1
 	else:
 		score = score +1
@@ -93,17 +93,17 @@ func checkInsideButton():
 			if enemys[i].isInside == true:	
 				if Input.is_action_pressed("w") && enemys[i].needName == "Blood" && $Player.isIdleing() == true:
 					$Player.playBloodAnim()
-					enemys[i].stillNeeding = true
+					enemys[i].gotTreated = true
 				if Input.is_action_pressed("q") && enemys[i].needName == "Mask" && $Player.isIdleing() == true:
 					$Player.playMaskAnim()
-					enemys[i].stillNeeding = true
+					enemys[i].gotTreated = true
 				if Input.is_action_pressed("e") && enemys[i].needName == "Pill" && $Player.isIdleing() == true:
 					$Player.playPillAnim()
-					enemys[i].stillNeeding = true
+					enemys[i].gotTreated = true
 				if Input.is_action_pressed("r") && enemys[i].needName == "Test" && $Player.isIdleing() == true:
 					$Player.playTestAnim()
-					enemys[i].stillNeeding = true
+					enemys[i].gotTreated = true
 				if Input.is_action_pressed("a") && enemys[i].needName == "Vaccine" && $Player.isIdleing() == true:
 					$Player.playVaccineAnim()
-					enemys[i].stillNeeding = true
+					enemys[i].gotTreated = true
 		

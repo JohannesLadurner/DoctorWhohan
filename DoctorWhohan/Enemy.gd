@@ -3,7 +3,7 @@ extends RigidBody2D
 
 export var min_speed = 150  # min speed
 export var max_speed = 250  # max speed
-var stillNeeding = false
+var gotTreated = false
 var needName
 var isInside = false
 
@@ -23,8 +23,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if gotTreated == true:
+		$Need.hide()
 	
 	
 	
