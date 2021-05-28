@@ -1,20 +1,30 @@
 extends Node
 
-
 export (PackedScene) var Enemy
 var score #Punktestand
 var life  #Leben 
 var enemys = [] #Enemys die gespawnt sind
 var unlockedNeeds = []
+var allNeedTypes
+enum needType{
+	Blood,
+	Pill,
+	Vaccine,
+	Mask,
+	Empty,
+	Test
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	unlockedNeeds.append("Vaccine")
-	unlockedNeeds.append("Blood")
-	unlockedNeeds.append("Mask")
-	unlockedNeeds.append("Empty")
-	unlockedNeeds.append("Test")
-	unlockedNeeds.append("Pill")
+	allNeedTypes = needType.keys()
+	
+	unlockedNeeds.append(allNeedTypes[needType.Blood])
+	unlockedNeeds.append(allNeedTypes[needType.Vaccine])
+	unlockedNeeds.append(allNeedTypes[needType.Mask])
+	unlockedNeeds.append(allNeedTypes[needType.Empty])
+	unlockedNeeds.append(allNeedTypes[needType.Test])
+	unlockedNeeds.append(allNeedTypes[needType.Pill])
 	$EnemyTimer.start()
 	$LifeOne.play()
 	$LifeTwo.play()
