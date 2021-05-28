@@ -16,7 +16,6 @@ func init(unlockedNeeds):
 	var rndNeed = randi() % unlockedNeeds.size()
 	needName = unlockedNeeds[rndNeed]
 	$Need.play(needName)
-	$AnimatedSprite.play("MManWalkOrange")
 	
 	
 # Wenn Bildschirm verlassen wird
