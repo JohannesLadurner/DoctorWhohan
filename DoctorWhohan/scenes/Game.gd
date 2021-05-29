@@ -3,9 +3,8 @@ extends Node
 export (PackedScene) var Enemy
 var score #Punktestand
 var life  #Leben 
-var enemys = [] #Enemys die gespawnt sind
+var enemies = [] #Enemys die gespawnt sind
 var unlockedNeeds = []
-var allNeedTypes
 enum needType{
 	Blood,
 	Pill,
@@ -17,8 +16,8 @@ enum needType{
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	allNeedTypes = needType.keys()
 	randomize()
+	addRandomNeed()
 	#unlockedNeeds.append(allNeedTypes[needType.Vaccine])
 	$EnemyTimer.start()
 	$LifeOne.play()
@@ -32,13 +31,14 @@ func _ready():
 func _process(delta):
 	$Score.text = str(score)
 	checkLife()
-	checkInsideButton()
+	checkPlayerInput()
+	checkEnemyTreated()
 	
 	
 
 func _on_EnemyTimer_timeout():
 	$EnemyPath/PathFollow2D.offset = 100
-	addRandomNeed()
+	#addRandomNeed()
 	
 	#Spawn patient
 	var enemy = Enemy.instance()
@@ -46,7 +46,7 @@ func _on_EnemyTimer_timeout():
 	add_child(enemy)
 	enemy.position = $EnemyPath/PathFollow2D.position
 	enemy.linear_velocity = Vector2(-100,0)
-	enemys.append(enemy)
+	enemies.append(enemy)
 	
 
 #Function die Aufgerufen wird, wenn Patient die hitbox des Doktors trifft
@@ -81,46 +81,40 @@ func checkLife():
 #Wird aufgerufen, wenn der Player verlassen wird
 func _on_Player_exit():
 	$Player.enteredBody.isInside = false
-	var current = enemys[0]
+	var current = enemies[0]
 	if current.gotTreated == false:
 		life = life - 1
 	else:
 		score = score +1
-	enemys.erase(current)
+	enemies.erase(current)
 
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
-func checkInsideButton():
-	
-	#if Input.is_action_pressed("e") && $Player.isIdleing() == true:
-		#$Player.playVaccineAnim()
-	
-	if enemys.size() != 0:
-		for i in enemys.size():
-			if enemys[i].isInside == true:	
-				if Input.is_action_pressed("w") && enemys[i].needName == "Blood" && $Player.isIdleing() == true:
-					$Player.playBloodAnim()
-					enemys[i].gotTreated = true
-				if Input.is_action_pressed("q") && enemys[i].needName == "Mask" && $Player.isIdleing() == true:
-					$Player.playMaskAnim()
-					enemys[i].gotTreated = true
-				if Input.is_action_pressed("e") && enemys[i].needName == "Pill" && $Player.isIdleing() == true:
-					$Player.playPillAnim()
-					enemys[i].gotTreated = true
-				if Input.is_action_pressed("r") && enemys[i].needName == "Test" && $Player.isIdleing() == true:
-					$Player.playTestAnim()
-					enemys[i].gotTreated = true
-				if Input.is_action_pressed("a") && enemys[i].needName == "Vaccine" && $Player.isIdleing() == true:
-					$Player.playVaccineAnim()
-					enemys[i].gotTreated = true
+func checkPlayerInput():
+	if($Player.isIdleing() == true):
+		if Input.is_action_pressed("w"):
+			$Player.playBloodAnim()
+		if Input.is_action_pressed("q"):
+			$Player.playMaskAnim()
+		if Input.is_action_pressed("e"):
+			$Player.playPillAnim()
+		if Input.is_action_pressed("r"):
+			$Player.playTestAnim()
+		if Input.is_action_pressed("a"):
+			$Player.playVaccineAnim()
 		
+func checkEnemyTreated():
+	if enemies.size() != 0:
+		for i in enemies.size():
+			if enemies[i].isInside == true && enemies[i].needName == $Player/AnimatedSprite.animation:
+				enemies[i].gotTreated = true
+				
 func addRandomNeed():
+	var allNeedTypes = needType.keys()
 	allNeedTypes.shuffle()
 	if unlockedNeeds.size() < allNeedTypes.size() - 1: #never add the empty type, if list is complete ignore function
 		var index = 0
-		print(allNeedTypes)
 		#add only to list if it is not already in + not the empty type
 		while (unlockedNeeds.find(allNeedTypes[index]) > -1) || (allNeedTypes[index] == needType.keys()[needType.Empty]):
 			index = index + 1
 			
 		unlockedNeeds.append(allNeedTypes[index])
-		print(allNeedTypes[index])
