@@ -1,4 +1,4 @@
-[gd_scene load_steps=1061 format=2]
+[gd_scene load_steps=1062 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
@@ -1055,6 +1055,7 @@
 [ext_resource path="res://roundsAnimation/RoundNumRight/FiveRight/FiveRight32.png" type="Texture" id=1053]
 [ext_resource path="res://roundsAnimation/RoundNumRight/FiveRight/FiveRight40.png" type="Texture" id=1054]
 [ext_resource path="res://roundsAnimation/RoundNumRight/FiveRight/FiveRight16.png" type="Texture" id=1055]
+[ext_resource path="res://roundsAnimation/Empty.png" type="Texture" id=1056]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -1073,8 +1074,13 @@ animations = [ {
 animations = [ {
 "frames": [ ExtResource( 36 ), ExtResource( 8 ), ExtResource( 33 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 13 ), ExtResource( 27 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 11 ), ExtResource( 23 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 10 ), ExtResource( 35 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 32 ), ExtResource( 12 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 18 ), ExtResource( 49 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 48 ), ExtResource( 22 ), ExtResource( 43 ), ExtResource( 25 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 7 ), ExtResource( 52 ), ExtResource( 55 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 51 ), ExtResource( 54 ), ExtResource( 4 ) ],
 "loop": false,
-"name": "default",
+"name": "Title",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 1056 ) ],
+"loop": true,
+"name": "Empty",
+"speed": 1.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
@@ -1108,6 +1114,11 @@ animations = [ {
 "loop": false,
 "name": "5",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 1056 ) ],
+"loop": true,
+"name": "Empty",
+"speed": 1.0
 }, {
 "frames": [ ExtResource( 478 ), ExtResource( 474 ), ExtResource( 477 ), ExtResource( 479 ), ExtResource( 480 ), ExtResource( 316 ), ExtResource( 322 ), ExtResource( 308 ), ExtResource( 305 ), ExtResource( 319 ), ExtResource( 326 ), ExtResource( 314 ), ExtResource( 339 ), ExtResource( 301 ), ExtResource( 329 ), ExtResource( 311 ), ExtResource( 328 ), ExtResource( 306 ), ExtResource( 323 ), ExtResource( 309 ), ExtResource( 300 ), ExtResource( 333 ), ExtResource( 324 ), ExtResource( 325 ), ExtResource( 303 ), ExtResource( 340 ), ExtResource( 327 ), ExtResource( 302 ), ExtResource( 332 ), ExtResource( 313 ), ExtResource( 307 ), ExtResource( 320 ), ExtResource( 304 ), ExtResource( 317 ), ExtResource( 330 ), ExtResource( 331 ), ExtResource( 334 ), ExtResource( 335 ), ExtResource( 312 ), ExtResource( 341 ), ExtResource( 336 ), ExtResource( 315 ), ExtResource( 337 ), ExtResource( 321 ), ExtResource( 338 ), ExtResource( 310 ), ExtResource( 318 ), ExtResource( 342 ), ExtResource( 343 ), ExtResource( 344 ) ],
 "loop": false,
@@ -1161,6 +1172,11 @@ animations = [ {
 "loop": false,
 "name": "5",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 1056 ) ],
+"loop": true,
+"name": "Empty",
+"speed": 1.0
 }, {
 "frames": [ ExtResource( 925 ), ExtResource( 926 ), ExtResource( 940 ), ExtResource( 927 ), ExtResource( 928 ), ExtResource( 937 ), ExtResource( 942 ), ExtResource( 939 ), ExtResource( 996 ), ExtResource( 980 ), ExtResource( 988 ), ExtResource( 1001 ), ExtResource( 992 ), ExtResource( 1002 ), ExtResource( 981 ), ExtResource( 990 ), ExtResource( 999 ), ExtResource( 993 ), ExtResource( 1003 ), ExtResource( 1000 ), ExtResource( 998 ), ExtResource( 987 ), ExtResource( 986 ), ExtResource( 994 ), ExtResource( 995 ), ExtResource( 1005 ), ExtResource( 997 ), ExtResource( 989 ), ExtResource( 1004 ), ExtResource( 982 ), ExtResource( 983 ), ExtResource( 984 ), ExtResource( 985 ), ExtResource( 991 ), ExtResource( 737 ), ExtResource( 735 ), ExtResource( 728 ), ExtResource( 761 ), ExtResource( 762 ), ExtResource( 756 ), ExtResource( 765 ), ExtResource( 767 ), ExtResource( 727 ), ExtResource( 730 ), ExtResource( 757 ), ExtResource( 782 ), ExtResource( 752 ), ExtResource( 759 ), ExtResource( 736 ), ExtResource( 726 ) ],
 "loop": false,
@@ -1237,17 +1253,23 @@ __meta__ = {
 [node name="RoundTitle" type="AnimatedSprite" parent="."]
 position = Vector2( 670, 140 )
 frames = SubResource( 3 )
+animation = "Empty"
 
 [node name="RoundNumLeft" type="AnimatedSprite" parent="."]
 position = Vector2( 670, 140 )
 frames = SubResource( 4 )
-animation = "9"
+animation = "Empty"
 
 [node name="RoundNumRight" type="AnimatedSprite" parent="."]
 position = Vector2( 670, 140 )
 frames = SubResource( 5 )
-animation = "5"
+animation = "Empty"
+
+[node name="RoundTimer" type="Timer" parent="."]
+wait_time = 20.0
 
 [connection signal="exit" from="Player" to="." method="_on_Player_exit"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
+[connection signal="animation_finished" from="RoundTitle" to="." method="_on_RoundTitle_animation_finished"]
+[connection signal="timeout" from="RoundTimer" to="." method="_on_RoundTimer_timeout"]

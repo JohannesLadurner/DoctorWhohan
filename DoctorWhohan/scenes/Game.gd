@@ -5,6 +5,8 @@ var score #Punktestand
 var life  #Leben 
 var enemies = [] #Enemys die gespawnt sind
 var unlockedNeeds = []
+var newRoundBeginning = true
+var roundNr = 0
 
 enum needType{
 	Blood,
@@ -20,12 +22,10 @@ func _ready():
 	randomize()
 	addRandomNeed()
 	#unlockedNeeds.append(allNeedTypes[needType.Vaccine])
-	$EnemyTimer.start()
+
 	$LifeOne.play()
 	$LifeTwo.play()
 	$LifeThree.play()
-	playRoundAnimation(65)
-	
 	score = 0
 	life = 3
 
@@ -36,6 +36,9 @@ func _process(delta):
 	checkLife()
 	checkPlayerInput()
 	checkEnemyTreated()
+	if newRoundBeginning == true && enemies.size() == 0: #Start new round when all enemies are gone
+		initNewRound()
+		newRoundBeginning = false
 	
 	
 
@@ -126,12 +129,30 @@ func playRoundAnimation(roundNumber):
 	var leftDigit = 0
 	var rightDigit = 0
 	if(roundNumber < 10):
-		leftDigit = roundNumber
+		rightDigit = roundNumber
 	else:
 		leftDigit = (roundNumber / 10)
 		rightDigit = roundNumber % 10
-	
-	$RoundTitle.play()
+
+	$RoundTitle.play("Title") #play the animation
 	$RoundNumLeft.play(leftDigit as String)
 	$RoundNumRight.play(rightDigit as String)
 		
+
+func initNewRound():
+	roundNr = roundNr + 1
+	playRoundAnimation(roundNr)
+
+func _on_RoundTimer_timeout():
+	$EnemyTimer.stop() #when a new Round starts, stop spawning enemies
+	$RoundTimer.stop()
+	newRoundBeginning = true
+
+func _on_RoundTitle_animation_finished():
+	if $RoundTitle.animation != "Empty":
+
+		$EnemyTimer.start() #As soon as the animation finished, start round Time again and spawn enemies
+		$RoundTimer.start()
+		$RoundTitle.play("Empty") #reset the animation, stop() does not work?
+		$RoundNumLeft.play("Empty")
+		$RoundNumRight.play("Empty")
