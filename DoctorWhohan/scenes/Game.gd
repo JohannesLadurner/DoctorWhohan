@@ -5,6 +5,7 @@ var score #Punktestand
 var life  #Leben 
 var enemies = [] #Enemys die gespawnt sind
 var unlockedNeeds = []
+
 enum needType{
 	Blood,
 	Pill,
@@ -23,10 +24,7 @@ func _ready():
 	$LifeOne.play()
 	$LifeTwo.play()
 	$LifeThree.play()
-	
-	$RoundTitle.play()
-	$RoundNumLeft.play()
-	$RoundNumRight.play()
+	playRoundAnimation(65)
 	
 	score = 0
 	life = 3
@@ -123,3 +121,17 @@ func addRandomNeed():
 			index = index + 1
 			
 		unlockedNeeds.append(allNeedTypes[index])
+		
+func playRoundAnimation(roundNumber):
+	var leftDigit = 0
+	var rightDigit = 0
+	if(roundNumber < 10):
+		leftDigit = roundNumber
+	else:
+		leftDigit = (roundNumber / 10)
+		rightDigit = roundNumber % 10
+	
+	$RoundTitle.play()
+	$RoundNumLeft.play(leftDigit as String)
+	$RoundNumRight.play(rightDigit as String)
+		
