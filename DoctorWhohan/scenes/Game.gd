@@ -6,6 +6,7 @@ var life  #Leben
 var enemies = [] #Enemys die gespawnt sind
 var unlockedNeeds = []
 var newRoundBeginning = true
+var roundAnimReverse = false
 var roundNr = 0
 
 enum needType{
@@ -125,7 +126,7 @@ func addRandomNeed():
 			
 		unlockedNeeds.append(allNeedTypes[index])
 		
-func playRoundAnimation(roundNumber):
+func playRoundAnimation(roundNumber, reverse):
 	var leftDigit = 0
 	var rightDigit = 0
 	if(roundNumber < 10):
@@ -134,14 +135,14 @@ func playRoundAnimation(roundNumber):
 		leftDigit = (roundNumber / 10)
 		rightDigit = roundNumber % 10
 
-	$RoundTitle.play("Title") #play the animation
-	$RoundNumLeft.play(leftDigit as String)
-	$RoundNumRight.play(rightDigit as String)
+	$RoundTitle.play("Title", reverse) #play the animation
+	$RoundNumLeft.play(leftDigit as String, reverse)
+	$RoundNumRight.play(rightDigit as String, reverse)
 		
 
 func initNewRound():
 	roundNr = roundNr + 1
-	playRoundAnimation(roundNr)
+	playRoundAnimation(roundNr, false)
 
 func _on_RoundTimer_timeout():
 	$EnemyTimer.stop() #when a new Round starts, stop spawning enemies
@@ -150,9 +151,13 @@ func _on_RoundTimer_timeout():
 
 func _on_RoundTitle_animation_finished():
 	if $RoundTitle.animation != "Empty":
-
-		$EnemyTimer.start() #As soon as the animation finished, start round Time again and spawn enemies
-		$RoundTimer.start()
-		$RoundTitle.play("Empty") #reset the animation, stop() does not work?
-		$RoundNumLeft.play("Empty")
-		$RoundNumRight.play("Empty")
+		if roundAnimReverse == false: #when animation is finished, play it in reverse
+			playRoundAnimation(roundNr, true)
+			roundAnimReverse = true
+		else: #animation is finished in reverse, start with new round
+			$EnemyTimer.start() #As soon as the animation finished, start round Time again and spawn enemies
+			$RoundTimer.start()
+			$RoundTitle.play("Empty") #reset the animation, stop() does not work?
+			$RoundNumLeft.play("Empty")
+			$RoundNumRight.play("Empty")
+			roundAnimReverse = false
