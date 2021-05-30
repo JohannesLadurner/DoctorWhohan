@@ -1,10 +1,160 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=161 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Game.gd" type="Script" id=3]
+[ext_resource path="res://roundsAnimation/Round/Round49.png" type="Texture" id=4]
 [ext_resource path="res://gameAnimation/Life0.png" type="Texture" id=5]
 [ext_resource path="res://gameAnimation/Life1.png" type="Texture" id=6]
+[ext_resource path="res://roundsAnimation/Round/Round42.png" type="Texture" id=7]
+[ext_resource path="res://roundsAnimation/Round/Round01.png" type="Texture" id=8]
+[ext_resource path="res://roundsAnimation/Round/Round07.png" type="Texture" id=9]
+[ext_resource path="res://roundsAnimation/Round/Round21.png" type="Texture" id=10]
+[ext_resource path="res://roundsAnimation/Round/Round09.png" type="Texture" id=11]
+[ext_resource path="res://roundsAnimation/Round/Round26.png" type="Texture" id=12]
+[ext_resource path="res://roundsAnimation/Round/Round05.png" type="Texture" id=13]
+[ext_resource path="res://roundsAnimation/Round/Round19.png" type="Texture" id=14]
+[ext_resource path="res://roundsAnimation/Round/Round23.png" type="Texture" id=15]
+[ext_resource path="res://roundsAnimation/Round/Round24.png" type="Texture" id=16]
+[ext_resource path="res://roundsAnimation/Round/Round15.png" type="Texture" id=17]
+[ext_resource path="res://roundsAnimation/Round/Round30.png" type="Texture" id=18]
+[ext_resource path="res://roundsAnimation/Round/Round32.png" type="Texture" id=19]
+[ext_resource path="res://roundsAnimation/Round/Round33.png" type="Texture" id=20]
+[ext_resource path="res://roundsAnimation/Round/Round16.png" type="Texture" id=21]
+[ext_resource path="res://roundsAnimation/Round/Round35.png" type="Texture" id=22]
+[ext_resource path="res://roundsAnimation/Round/Round10.png" type="Texture" id=23]
+[ext_resource path="res://roundsAnimation/Round/Round20.png" type="Texture" id=24]
+[ext_resource path="res://roundsAnimation/Round/Round37.png" type="Texture" id=25]
+[ext_resource path="res://roundsAnimation/Round/Round04.png" type="Texture" id=26]
+[ext_resource path="res://roundsAnimation/Round/Round06.png" type="Texture" id=27]
+[ext_resource path="res://roundsAnimation/Round/Round03.png" type="Texture" id=28]
+[ext_resource path="res://roundsAnimation/Round/Round11.png" type="Texture" id=29]
+[ext_resource path="res://roundsAnimation/Round/Round12.png" type="Texture" id=30]
+[ext_resource path="res://roundsAnimation/Round/Round14.png" type="Texture" id=31]
+[ext_resource path="res://roundsAnimation/Round/Round25.png" type="Texture" id=32]
+[ext_resource path="res://roundsAnimation/Round/Round02.png" type="Texture" id=33]
+[ext_resource path="res://roundsAnimation/Round/Round13.png" type="Texture" id=34]
+[ext_resource path="res://roundsAnimation/Round/Round22.png" type="Texture" id=35]
+[ext_resource path="res://roundsAnimation/Round/Round00.png" type="Texture" id=36]
+[ext_resource path="res://roundsAnimation/Round/Round08.png" type="Texture" id=37]
+[ext_resource path="res://roundsAnimation/Round/Round18.png" type="Texture" id=38]
+[ext_resource path="res://roundsAnimation/Round/Round17.png" type="Texture" id=39]
+[ext_resource path="res://roundsAnimation/Round/Round28.png" type="Texture" id=40]
+[ext_resource path="res://roundsAnimation/Round/Round29.png" type="Texture" id=41]
+[ext_resource path="res://roundsAnimation/Round/Round27.png" type="Texture" id=42]
+[ext_resource path="res://roundsAnimation/Round/Round36.png" type="Texture" id=43]
+[ext_resource path="res://roundsAnimation/Round/Round38.png" type="Texture" id=44]
+[ext_resource path="res://roundsAnimation/Round/Round39.png" type="Texture" id=45]
+[ext_resource path="res://roundsAnimation/Round/Round40.png" type="Texture" id=46]
+[ext_resource path="res://roundsAnimation/Round/Round41.png" type="Texture" id=47]
+[ext_resource path="res://roundsAnimation/Round/Round34.png" type="Texture" id=48]
+[ext_resource path="res://roundsAnimation/Round/Round31.png" type="Texture" id=49]
+[ext_resource path="res://roundsAnimation/Round/Round45.png" type="Texture" id=50]
+[ext_resource path="res://roundsAnimation/Round/Round47.png" type="Texture" id=51]
+[ext_resource path="res://roundsAnimation/Round/Round43.png" type="Texture" id=52]
+[ext_resource path="res://roundsAnimation/Round/Round46.png" type="Texture" id=53]
+[ext_resource path="res://roundsAnimation/Round/Round48.png" type="Texture" id=54]
+[ext_resource path="res://roundsAnimation/Round/Round44.png" type="Texture" id=55]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft28.png" type="Texture" id=56]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft24.png" type="Texture" id=57]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft27.png" type="Texture" id=58]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft25.png" type="Texture" id=59]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft22.png" type="Texture" id=60]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft23.png" type="Texture" id=61]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft26.png" type="Texture" id=62]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft03.png" type="Texture" id=63]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft12.png" type="Texture" id=64]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft18.png" type="Texture" id=65]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft19.png" type="Texture" id=66]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft20.png" type="Texture" id=67]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft21.png" type="Texture" id=68]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft02.png" type="Texture" id=69]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft08.png" type="Texture" id=70]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft11.png" type="Texture" id=71]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft01.png" type="Texture" id=72]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft05.png" type="Texture" id=73]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft10.png" type="Texture" id=74]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft09.png" type="Texture" id=75]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft13.png" type="Texture" id=76]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft14.png" type="Texture" id=77]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft00.png" type="Texture" id=78]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft15.png" type="Texture" id=79]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft16.png" type="Texture" id=80]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft04.png" type="Texture" id=81]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft17.png" type="Texture" id=82]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft07.png" type="Texture" id=83]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft06.png" type="Texture" id=84]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft35.png" type="Texture" id=85]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft43.png" type="Texture" id=86]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft46.png" type="Texture" id=87]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft40.png" type="Texture" id=88]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft49.png" type="Texture" id=89]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft39.png" type="Texture" id=90]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft45.png" type="Texture" id=91]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft41.png" type="Texture" id=92]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft44.png" type="Texture" id=93]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft48.png" type="Texture" id=94]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft47.png" type="Texture" id=95]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft42.png" type="Texture" id=96]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft38.png" type="Texture" id=97]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft34.png" type="Texture" id=98]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft36.png" type="Texture" id=99]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft37.png" type="Texture" id=100]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft33.png" type="Texture" id=101]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft29.png" type="Texture" id=102]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft31.png" type="Texture" id=103]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft30.png" type="Texture" id=104]
+[ext_resource path="res://roundsAnimation/RoundNumLeft/ZeroLeft/ZeroLeft32.png" type="Texture" id=105]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight24.png" type="Texture" id=106]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight17.png" type="Texture" id=107]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight26.png" type="Texture" id=108]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight34.png" type="Texture" id=109]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight35.png" type="Texture" id=110]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight15.png" type="Texture" id=111]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight25.png" type="Texture" id=112]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight13.png" type="Texture" id=113]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight00.png" type="Texture" id=114]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight07.png" type="Texture" id=115]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight04.png" type="Texture" id=116]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight27.png" type="Texture" id=117]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight36.png" type="Texture" id=118]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight37.png" type="Texture" id=119]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight23.png" type="Texture" id=120]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight39.png" type="Texture" id=121]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight22.png" type="Texture" id=122]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight40.png" type="Texture" id=123]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight12.png" type="Texture" id=124]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight14.png" type="Texture" id=125]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight30.png" type="Texture" id=126]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight41.png" type="Texture" id=127]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight18.png" type="Texture" id=128]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight31.png" type="Texture" id=129]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight03.png" type="Texture" id=130]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight11.png" type="Texture" id=131]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight28.png" type="Texture" id=132]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight32.png" type="Texture" id=133]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight38.png" type="Texture" id=134]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight19.png" type="Texture" id=135]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight42.png" type="Texture" id=136]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight43.png" type="Texture" id=137]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight05.png" type="Texture" id=138]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight29.png" type="Texture" id=139]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight44.png" type="Texture" id=140]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight45.png" type="Texture" id=141]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight09.png" type="Texture" id=142]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight46.png" type="Texture" id=143]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight16.png" type="Texture" id=144]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight08.png" type="Texture" id=145]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight20.png" type="Texture" id=146]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight02.png" type="Texture" id=147]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight06.png" type="Texture" id=148]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight21.png" type="Texture" id=149]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight33.png" type="Texture" id=150]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight01.png" type="Texture" id=151]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight10.png" type="Texture" id=152]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight48.png" type="Texture" id=153]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight49.png" type="Texture" id=154]
+[ext_resource path="res://roundsAnimation/RoundNumRight/ZeroRight/ZeroRight47.png" type="Texture" id=155]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -17,6 +167,30 @@ animations = [ {
 "loop": true,
 "name": "Life",
 "speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 8 ), ExtResource( 33 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 13 ), ExtResource( 27 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 11 ), ExtResource( 23 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 34 ), ExtResource( 31 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 10 ), ExtResource( 35 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 32 ), ExtResource( 12 ), ExtResource( 42 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 18 ), ExtResource( 49 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 48 ), ExtResource( 22 ), ExtResource( 43 ), ExtResource( 25 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 7 ), ExtResource( 52 ), ExtResource( 55 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 51 ), ExtResource( 54 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 78 ), ExtResource( 72 ), ExtResource( 69 ), ExtResource( 63 ), ExtResource( 81 ), ExtResource( 73 ), ExtResource( 84 ), ExtResource( 83 ), ExtResource( 70 ), ExtResource( 75 ), ExtResource( 74 ), ExtResource( 71 ), ExtResource( 64 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 82 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 57 ), ExtResource( 59 ), ExtResource( 62 ), ExtResource( 58 ), ExtResource( 56 ), ExtResource( 102 ), ExtResource( 104 ), ExtResource( 103 ), ExtResource( 105 ), ExtResource( 101 ), ExtResource( 98 ), ExtResource( 85 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 97 ), ExtResource( 90 ), ExtResource( 88 ), ExtResource( 92 ), ExtResource( 96 ), ExtResource( 86 ), ExtResource( 93 ), ExtResource( 91 ), ExtResource( 87 ), ExtResource( 95 ), ExtResource( 94 ), ExtResource( 89 ) ],
+"loop": false,
+"name": "Zero",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 114 ), ExtResource( 151 ), ExtResource( 147 ), ExtResource( 130 ), ExtResource( 116 ), ExtResource( 138 ), ExtResource( 148 ), ExtResource( 115 ), ExtResource( 145 ), ExtResource( 142 ), ExtResource( 152 ), ExtResource( 131 ), ExtResource( 124 ), ExtResource( 113 ), ExtResource( 125 ), ExtResource( 111 ), ExtResource( 144 ), ExtResource( 107 ), ExtResource( 128 ), ExtResource( 135 ), ExtResource( 146 ), ExtResource( 149 ), ExtResource( 122 ), ExtResource( 120 ), ExtResource( 106 ), ExtResource( 112 ), ExtResource( 108 ), ExtResource( 117 ), ExtResource( 132 ), ExtResource( 139 ), ExtResource( 126 ), ExtResource( 129 ), ExtResource( 133 ), ExtResource( 150 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 134 ), ExtResource( 121 ), ExtResource( 123 ), ExtResource( 127 ), ExtResource( 136 ), ExtResource( 137 ), ExtResource( 140 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 155 ), ExtResource( 153 ), ExtResource( 154 ) ],
+"loop": false,
+"name": "Zero",
+"speed": 10.0
 } ]
 
 [node name="Game" type="Node"]
@@ -69,6 +243,20 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RoundTitle" type="AnimatedSprite" parent="."]
+position = Vector2( 670, 140 )
+frames = SubResource( 3 )
+
+[node name="RoundNumLeft" type="AnimatedSprite" parent="."]
+position = Vector2( 670, 140 )
+frames = SubResource( 4 )
+animation = "Zero"
+
+[node name="RoundNumRight" type="AnimatedSprite" parent="."]
+position = Vector2( 670, 140 )
+frames = SubResource( 5 )
+animation = "Zero"
 
 [connection signal="exit" from="Player" to="." method="_on_Player_exit"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]

@@ -23,6 +23,11 @@ func _ready():
 	$LifeOne.play()
 	$LifeTwo.play()
 	$LifeThree.play()
+	
+	$RoundTitle.play()
+	$RoundNumLeft.play()
+	$RoundNumRight.play()
+	
 	score = 0
 	life = 3
 
