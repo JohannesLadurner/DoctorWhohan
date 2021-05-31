@@ -21,9 +21,6 @@ enum needType{
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	addRandomNeed()
-	#unlockedNeeds.append(allNeedTypes[needType.Vaccine])
-
 	$LifeOne.play()
 	$LifeTwo.play()
 	$LifeThree.play()
@@ -40,13 +37,11 @@ func _process(delta):
 	if newRoundBeginning == true && enemies.size() == 0: #Start new round when all enemies are gone
 		initNewRound()
 		newRoundBeginning = false
-	
-	
+
 
 func _on_EnemyTimer_timeout():
 	$EnemyPath/PathFollow2D.offset = 100
-	#addRandomNeed()
-	
+
 	#Spawn patient
 	var enemy = Enemy.instance()
 	enemy.init(unlockedNeeds)
@@ -54,17 +49,19 @@ func _on_EnemyTimer_timeout():
 	enemy.position = $EnemyPath/PathFollow2D.position
 	enemy.linear_velocity = Vector2(-100,0)
 	enemies.append(enemy)
-	
+
 
 #Function die Aufgerufen wird, wenn Patient die hitbox des Doktors trifft
 func _on_Player_hit():
 	$Player.enteredBody.isInside = true
 	
-	
+
+
 #Wird aufgerufen, wenn alle Leben verbraucht sind
 func gameOver():
 	$Player.hide()
-	
+
+
 #Funktion, die Anzahl der Leben überprüft 
 func checkLife():
 	if life == 3:
@@ -85,6 +82,7 @@ func checkLife():
 		$LifeThree.hide()
 		gameOver()
 
+
 #Wird aufgerufen, wenn der Player verlassen wird
 func _on_Player_exit():
 	$Player.enteredBody.isInside = false
@@ -94,6 +92,7 @@ func _on_Player_exit():
 	else:
 		score = score +1
 	enemies.erase(current)
+
 
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkPlayerInput():
@@ -108,13 +107,15 @@ func checkPlayerInput():
 			$Player.playTestAnim()
 		if Input.is_action_pressed("a"):
 			$Player.playVaccineAnim()
-		
+
+
 func checkEnemyTreated():
 	if enemies.size() != 0:
 		for i in enemies.size():
 			if enemies[i].isInside == true && enemies[i].needName == $Player/AnimatedSprite.animation:
 				enemies[i].gotTreated = true
-				
+
+
 func addRandomNeed():
 	var allNeedTypes = needType.keys()
 	allNeedTypes.shuffle()
@@ -125,7 +126,10 @@ func addRandomNeed():
 			index = index + 1
 			
 		unlockedNeeds.append(allNeedTypes[index])
-		
+		return allNeedTypes[index]
+	return null
+
+
 func playRoundAnimation(roundNumber, reverse):
 	var leftDigit = 0
 	var rightDigit = 0
@@ -138,16 +142,22 @@ func playRoundAnimation(roundNumber, reverse):
 	$RoundTitle.play("Title", reverse) #play the animation
 	$RoundNumLeft.play(leftDigit as String, reverse)
 	$RoundNumRight.play(rightDigit as String, reverse)
-		
+
 
 func initNewRound():
 	roundNr = roundNr + 1
 	playRoundAnimation(roundNr, false)
+	var effectName = addRandomNeed()
+	if effectName != null:
+		$EffectDescription.text = "New Effect: " + effectName
+		$EffectDescription.show()
+	
 
 func _on_RoundTimer_timeout():
 	$EnemyTimer.stop() #when a new Round starts, stop spawning enemies
 	$RoundTimer.stop()
 	newRoundBeginning = true
+
 
 func _on_RoundTitle_animation_finished():
 	if $RoundTitle.animation != "Empty":
@@ -160,4 +170,5 @@ func _on_RoundTitle_animation_finished():
 			$RoundTitle.play("Empty") #reset the animation, stop() does not work?
 			$RoundNumLeft.play("Empty")
 			$RoundNumRight.play("Empty")
+			$EffectDescription.hide()
 			roundAnimReverse = false
