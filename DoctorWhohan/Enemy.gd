@@ -6,11 +6,11 @@ export var max_speed = 250  # max speed
 var gotTreated = false
 var needName
 var isInside = false
+var speed = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	#play_random_animation()
 	
 func init(unlockedNeeds):
 	var rndNeed = randi() % unlockedNeeds.size()

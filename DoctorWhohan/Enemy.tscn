@@ -53,14 +53,14 @@ animations = [ {
 "name": "Mask",
 "speed": 4.0
 }, {
+"frames": [ ExtResource( 10 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "Empty",
+"speed": 4.0
+}, {
 "frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Vaccine",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 27 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "Blood",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 15 ) ],
@@ -73,9 +73,9 @@ animations = [ {
 "name": "Pill",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 27 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 30 ) ],
 "loop": true,
-"name": "Empty",
+"name": "Blood",
 "speed": 4.0
 } ]
 

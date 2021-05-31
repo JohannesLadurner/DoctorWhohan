@@ -8,6 +8,7 @@ var unlockedNeeds = []
 var newRoundBeginning = true
 var roundAnimReverse = false
 var roundNr = 0
+var enemyBaseSpeed = 50
 
 enum needType{
 	Blood,
@@ -47,7 +48,8 @@ func _on_EnemyTimer_timeout():
 	enemy.init(unlockedNeeds)
 	add_child(enemy)
 	enemy.position = $EnemyPath/PathFollow2D.position
-	enemy.linear_velocity = Vector2(-100,0)
+	enemy.speed = (randi() % enemyBaseSpeed) + enemyBaseSpeed #min speed = baseSpeed, max speed = 2*baseSpeed
+	enemy.linear_velocity = Vector2(-enemy.speed,0)
 	enemies.append(enemy)
 
 
