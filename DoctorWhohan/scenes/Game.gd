@@ -149,11 +149,34 @@ func playRoundAnimation(roundNumber, reverse):
 func initNewRound():
 	roundNr = roundNr + 1
 	playRoundAnimation(roundNr, false)
-	var effectName = addRandomNeed()
-	if effectName != null:
+	if roundNr == 1: #first round begin with a need
+		var effectName = addRandomNeed()
 		$EffectDescription.text = "New Effect: " + effectName
-		$EffectDescription.show()
-	
+	else:
+		addNewRandomEffect()
+	$EffectDescription.show()
+
+
+func addNewRandomEffect():
+	var effectChosen = false
+	while effectChosen == false:
+		var randomEffect = randi() % 3
+		print(randomEffect)
+		if randomEffect == 0: #Add a new need
+			var effectName = addRandomNeed()
+			if effectName != null:
+				$EffectDescription.text = "New Effect: " + effectName
+				effectChosen = true
+		if randomEffect == 1: #Increase the speed of the patients
+			enemyBaseSpeed = enemyBaseSpeed + 10
+			$EffectDescription.text = "Patients Speed Increased"
+			effectChosen = true
+		if randomEffect == 2: #Faster patient spwaning
+			if $EnemyTimer.wait_time - 0.1 > 0:
+				$EnemyTimer.wait_time = $EnemyTimer.wait_time - 0.1
+				$EffectDescription.text = "Patients Spawn Time Decreased"
+				effectChosen = true
+
 
 func _on_RoundTimer_timeout():
 	$EnemyTimer.stop() #when a new Round starts, stop spawning enemies
