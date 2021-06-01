@@ -25,6 +25,11 @@ func _ready():
 	$LifeOne.play()
 	$LifeTwo.play()
 	$LifeThree.play()
+	$UpgradeBlood.play("Locked")
+	$UpgradeMask.play("Locked")
+	$UpgradePill.play("Locked")
+	$UpgradeTest.play("Locked")
+	$UpgradeVaccine.play("Locked")
 	score = 0
 	life = 3
 
