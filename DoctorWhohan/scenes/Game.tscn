@@ -1455,17 +1455,17 @@ __meta__ = {
 }
 
 [node name="RoundTitle" type="AnimatedSprite" parent="."]
-position = Vector2( 670, 157 )
+position = Vector2( 670, 179 )
 frames = SubResource( 4 )
 animation = "Empty"
 
 [node name="RoundNumLeft" type="AnimatedSprite" parent="."]
-position = Vector2( 670, 157 )
+position = Vector2( 670, 179 )
 frames = SubResource( 5 )
 animation = "Empty"
 
 [node name="RoundNumRight" type="AnimatedSprite" parent="."]
-position = Vector2( 670, 157 )
+position = Vector2( 670, 179 )
 frames = SubResource( 6 )
 animation = "Empty"
 

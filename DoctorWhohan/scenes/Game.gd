@@ -118,15 +118,15 @@ func _on_Player_exit():
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkPlayerInput():
 	if $Player.isIdleing() == true:
-		if Input.is_action_pressed("w"):
+		if Input.is_action_pressed("w") && $Player.unlockedNeeds.find("Blood") > -1:
 			$Player.playBloodAnim()
-		if Input.is_action_pressed("q"):
+		if Input.is_action_pressed("q") && $Player.unlockedNeeds.find("Mask") > -1:
 			$Player.playMaskAnim()
-		if Input.is_action_pressed("e"):
+		if Input.is_action_pressed("e") && $Player.unlockedNeeds.find("Pill") > -1:
 			$Player.playPillAnim()
-		if Input.is_action_pressed("r"):
+		if Input.is_action_pressed("r") && $Player.unlockedNeeds.find("Test") > -1:
 			$Player.playTestAnim()
-		if Input.is_action_pressed("a"):
+		if Input.is_action_pressed("a") && $Player.unlockedNeeds.find("Vaccine") > -1:
 			$Player.playVaccineAnim()
 			
 	if Input.is_action_pressed("1"):
@@ -203,40 +203,55 @@ func addRandomNeed():
 func updateUpgradeIcons():
 	$Money.text = "Money: $" + $Player.money as String
 	#Update Blood
-	if $Player.money >= upgradeBloodCosts && $UpgradeBlood.animation == "Unavailable":
-		$UpgradeBlood.play("Available")
-		$UpgradeBloodText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
-	if $Player.money < upgradeBloodCosts && $UpgradeBlood.animation == "Available":
-		$UpgradeBlood.play("Unavailable")
-		$UpgradeBloodText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
+	if $UpgradeBlood.animation != "Locked":
+		if $Player.money >= upgradeBloodCosts:
+			if $UpgradeBlood.animation == "Unavailable":
+				$UpgradeBlood.play("Available")
+			$UpgradeBloodText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
+		if $Player.money < upgradeBloodCosts:
+			if $UpgradeBlood.animation == "Available":
+				$UpgradeBlood.play("Unavailable")
+			$UpgradeBloodText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
 	#Update Pill
-	if $Player.money >= upgradePillCosts && $UpgradePill.animation == "Unavailable":
-		$UpgradePill.play("Available")
-		$UpgradePillText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
-	if $Player.money < upgradePillCosts && $UpgradePill.animation == "Available":
-		$UpgradePill.play("Unavailable")
-		$UpgradePillText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
+	if $UpgradePill.animation != "Locked":
+		if $Player.money >= upgradePillCosts:
+			if  $UpgradePill.animation == "Unavailable":
+				$UpgradePill.play("Available")
+			$UpgradePillText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
+		if $Player.money < upgradePillCosts:
+			if $UpgradePill.animation == "Available":
+				$UpgradePill.play("Unavailable")
+			$UpgradePillText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
 	#Update Vaccine
-	if $Player.money >= upgradeVaccineCosts && $UpgradeVaccine.animation == "Unavailable":
-		$UpgradeVaccine.play("Available")
-		$UpgradeVaccineText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
-	if $Player.money < upgradeVaccineCosts && $UpgradeVaccine.animation == "Available":
-		$UpgradeVaccine.play("Unavailable")
-		$UpgradeVaccineText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
+	if $UpgradeVaccine.animation != "Locked":
+		if $Player.money >= upgradeVaccineCosts:
+			if $UpgradeVaccine.animation == "Unavailable":
+				$UpgradeVaccine.play("Available")
+			$UpgradeVaccineText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
+		if $Player.money < upgradeVaccineCosts:
+			if $UpgradeVaccine.animation == "Available":
+				$UpgradeVaccine.play("Unavailable")
+			$UpgradeVaccineText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
 	#Update Mask
-	if $Player.money >= upgradeMaskCosts && $UpgradeMask.animation == "Unavailable":
-		$UpgradeMask.play("Available")
-		$UpgradeMaskText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
-	if $Player.money < upgradeMaskCosts && $UpgradeMask.animation == "Available":
-		$UpgradeMask.play("Unavailable")
-		$UpgradeMaskText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
+	if $UpgradeMask.animation != "Locked":
+		if $Player.money >= upgradeMaskCosts:
+			if $UpgradeMask.animation == "Unavailable":
+				$UpgradeMask.play("Available")
+			$UpgradeMaskText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
+		if $Player.money < upgradeMaskCosts:
+			if $UpgradeMask.animation == "Available":
+				$UpgradeMask.play("Unavailable")
+			$UpgradeMaskText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
 	#Update Test
-	if $Player.money >= upgradeTestCosts && $UpgradeTest.animation == "Unavailable":
-		$UpgradeTest.play("Available")
-		$UpgradeTestText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
-	if $Player.money < upgradeTestCosts && $UpgradeTest.animation == "Available":
-		$UpgradeTest.play("Unavailable")
-		$UpgradeTestText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
+	if $UpgradeTest.animation != "Locked":
+		if $Player.money >= upgradeTestCosts:
+			if $UpgradeTest.animation == "Unavailable":
+				$UpgradeTest.play("Available")
+			$UpgradeTestText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
+		if $Player.money < upgradeTestCosts:
+			if $UpgradeTest.animation == "Available":
+				$UpgradeTest.play("Unavailable")
+			$UpgradeTestText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
 
 
 #############################################
