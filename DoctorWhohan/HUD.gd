@@ -24,7 +24,7 @@ func show_game_over():
 	$Message.text = "DOCTOR WHOHAN"
 	$Message.show()
 	yield(get_tree().create_timer(1), "timeout")
-	$StartButton.show()
+	$Start.show()
 
 func update_score(score):
 	$Score.text = str(score)

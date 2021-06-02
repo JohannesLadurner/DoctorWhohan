@@ -39,13 +39,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Score.text = str(score)
-	checkLife()
-	checkPlayerInput()
-	checkEnemyTreated()
-	updateUpgradeIcons()
-	if newRoundBeginning == true && enemies.size() == 0 && start == true: #Start new round when all enemies are gone
-		initNewRound()
-		newRoundBeginning = false
+	if start == true:
+		checkLife()
+		checkPlayerInput()
+		checkEnemyTreated()
+		updateUpgradeIcons()
+		if newRoundBeginning == true && enemies.size() == 0: #Start new round when all enemies are gone
+			initNewRound()
+			newRoundBeginning = false
 
 
 func _on_EnemyTimer_timeout():
@@ -70,7 +71,7 @@ func _on_Player_hit():
 #Wird aufgerufen, wenn alle Leben verbraucht sind
 func gameOver():
 	$Player.hide()
-	pass
+	$HUD.show_game_over()
 
 
 #Funktion, die Anzahl der Leben überprüft 
