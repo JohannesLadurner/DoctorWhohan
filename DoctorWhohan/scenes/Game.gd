@@ -342,7 +342,11 @@ func _on_UpgradeVaccine_animation_finished():
 		$UpgradeVaccine.play("Available")
 	pass
 
+#############################################
+###################HUD######################
+#############################################
 
+#Calls when the start button is pressed
 func _on_HUD_start_game():
 	start = true
 	$HUD.hideAll()
@@ -360,6 +364,7 @@ func _on_HUD_start_game():
 	$Player.lifes = 3
 	$HUD.update_score(score)
 	
+#hide all things
 func hideStart():
 	$LifeOne.hide()
 	$LifeTwo.hide()
@@ -380,6 +385,7 @@ func hideStart():
 	$Money.hide()
 	$EffectDescription.hide()
 	
+#show all things
 func showAll():
 	$LifeOne.show()
 	$LifeTwo.show()
