@@ -1,4 +1,4 @@
-[gd_scene load_steps=1125 format=2]
+[gd_scene load_steps=1126 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
@@ -1107,6 +1107,7 @@
 [ext_resource path="res://backgrounds/background3.png" type="Texture" id=1105]
 [ext_resource path="res://backgrounds/background1.png" type="Texture" id=1106]
 [ext_resource path="res://backgrounds/background2.png" type="Texture" id=1107]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=1108]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -1144,6 +1145,11 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
+"frames": [ ExtResource( 1056 ) ],
+"loop": true,
+"name": "Empty",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 493 ), ExtResource( 548 ), ExtResource( 529 ), ExtResource( 546 ), ExtResource( 492 ), ExtResource( 519 ), ExtResource( 534 ), ExtResource( 520 ), ExtResource( 536 ), ExtResource( 537 ), ExtResource( 542 ), ExtResource( 494 ), ExtResource( 501 ), ExtResource( 523 ), ExtResource( 509 ), ExtResource( 495 ), ExtResource( 503 ), ExtResource( 510 ), ExtResource( 524 ), ExtResource( 526 ), ExtResource( 527 ), ExtResource( 544 ), ExtResource( 516 ), ExtResource( 545 ), ExtResource( 547 ), ExtResource( 549 ), ExtResource( 513 ), ExtResource( 514 ), ExtResource( 486 ), ExtResource( 511 ), ExtResource( 487 ), ExtResource( 496 ), ExtResource( 504 ), ExtResource( 512 ), ExtResource( 497 ), ExtResource( 498 ), ExtResource( 499 ), ExtResource( 515 ), ExtResource( 552 ), ExtResource( 553 ), ExtResource( 551 ), ExtResource( 554 ), ExtResource( 555 ), ExtResource( 550 ), ExtResource( 239 ), ExtResource( 247 ), ExtResource( 293 ), ExtResource( 241 ), ExtResource( 260 ), ExtResource( 262 ) ],
 "loop": false,
 "name": "3",
@@ -1193,15 +1199,15 @@ animations = [ {
 "loop": false,
 "name": "7",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 1056 ) ],
-"loop": true,
-"name": "Empty",
-"speed": 1.0
 } ]
 
 [sub_resource type="SpriteFrames" id=6]
 animations = [ {
+"frames": [ ExtResource( 1056 ) ],
+"loop": true,
+"name": "Empty",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 581 ), ExtResource( 591 ), ExtResource( 574 ), ExtResource( 608 ), ExtResource( 593 ), ExtResource( 595 ), ExtResource( 596 ), ExtResource( 597 ), ExtResource( 609 ), ExtResource( 613 ), ExtResource( 606 ), ExtResource( 582 ), ExtResource( 570 ), ExtResource( 622 ), ExtResource( 598 ), ExtResource( 619 ), ExtResource( 612 ), ExtResource( 607 ), ExtResource( 610 ), ExtResource( 580 ), ExtResource( 599 ), ExtResource( 592 ), ExtResource( 600 ), ExtResource( 601 ), ExtResource( 583 ), ExtResource( 602 ), ExtResource( 584 ), ExtResource( 585 ), ExtResource( 623 ), ExtResource( 620 ), ExtResource( 603 ), ExtResource( 575 ), ExtResource( 615 ), ExtResource( 586 ), ExtResource( 572 ), ExtResource( 587 ), ExtResource( 627 ), ExtResource( 625 ), ExtResource( 588 ), ExtResource( 571 ), ExtResource( 604 ), ExtResource( 589 ), ExtResource( 605 ), ExtResource( 611 ), ExtResource( 568 ), ExtResource( 614 ), ExtResource( 573 ), ExtResource( 621 ), ExtResource( 626 ), ExtResource( 628 ) ],
 "loop": false,
 "name": "3",
@@ -1251,11 +1257,6 @@ animations = [ {
 "loop": false,
 "name": "7",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 1056 ) ],
-"loop": true,
-"name": "Empty",
-"speed": 1.0
 } ]
 
 [sub_resource type="SpriteFrames" id=7]
@@ -1421,7 +1422,7 @@ wait_time = 3.0
 curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="EnemyPath"]
-position = Vector2( 1449.57, 574.903 )
+position = Vector2( 1416.73, 566.527 )
 rotation = 3.14086
 v_offset = -15.0
 rotate = false
@@ -1597,6 +1598,8 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HUD" parent="." instance=ExtResource( 1108 )]
 [connection signal="exit" from="Player" to="." method="_on_Player_exit"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_EnemyTimer_timeout"]
@@ -1607,3 +1610,4 @@ __meta__ = {
 [connection signal="animation_finished" from="UpgradeTest" to="." method="_on_UpgradeTest_animation_finished"]
 [connection signal="animation_finished" from="UpgradePill" to="." method="_on_UpgradePill_animation_finished"]
 [connection signal="animation_finished" from="UpgradeMask" to="." method="_on_UpgradeMask_animation_finished"]
+[connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]

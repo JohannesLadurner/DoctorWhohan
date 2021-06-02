@@ -3,7 +3,7 @@ extends Node
 export (PackedScene) var Enemy
 
 var score #Punktestand
-
+var start = false
 ########NEEDS#########
 enum needType{
 	Blood,
@@ -33,18 +33,8 @@ var roundNr = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	randomize()
-	$LifeOne.play()
-	$LifeTwo.play()
-	$LifeThree.play()
-	$UpgradeBlood.play("Locked")
-	$UpgradeMask.play("Locked")
-	$UpgradePill.play("Locked")
-	$UpgradeTest.play("Locked")
-	$UpgradeVaccine.play("Locked")
-	score = 0
-	$Player.lifes = 3
 	$Background.play()
+	hideStart()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -53,7 +43,7 @@ func _process(delta):
 	checkPlayerInput()
 	checkEnemyTreated()
 	updateUpgradeIcons()
-	if newRoundBeginning == true && enemies.size() == 0: #Start new round when all enemies are gone
+	if newRoundBeginning == true && enemies.size() == 0 && start == true: #Start new round when all enemies are gone
 		initNewRound()
 		newRoundBeginning = false
 
@@ -351,3 +341,61 @@ func _on_UpgradeVaccine_animation_finished():
 	if $UpgradeVaccine.animation == "Upgrade":
 		$UpgradeVaccine.play("Available")
 	pass
+
+
+func _on_HUD_start_game():
+	start = true
+	$HUD.hideAll()
+	showAll()
+	randomize()
+	$LifeOne.play()
+	$LifeTwo.play()
+	$LifeThree.play()
+	$UpgradeBlood.play("Locked")
+	$UpgradeMask.play("Locked")
+	$UpgradePill.play("Locked")
+	$UpgradeTest.play("Locked")
+	$UpgradeVaccine.play("Locked")
+	score = 0
+	$Player.lifes = 3
+	$HUD.update_score(score)
+	
+func hideStart():
+	$LifeOne.hide()
+	$LifeTwo.hide()
+	$LifeThree.hide()
+	$RoundTitle.hide()
+	$RoundNumLeft.hide()
+	$RoundNumRight.hide()
+	$UpgradeBlood.hide()
+	$UpgradeBloodText.hide()
+	$UpgradeMask.hide()
+	$UpgradeMaskText.hide()
+	$UpgradePill.hide()
+	$UpgradePillText.hide()
+	$UpgradeTest.hide()
+	$UpgradeTestText.hide()
+	$UpgradeVaccine.hide()
+	$UpgradeVaccineText.hide()
+	$Money.hide()
+	$EffectDescription.hide()
+	
+func showAll():
+	$LifeOne.show()
+	$LifeTwo.show()
+	$LifeThree.show()
+	$RoundTitle.show()
+	$RoundNumLeft.show()
+	$RoundNumRight.show()
+	$UpgradeBlood.show()
+	$UpgradeBloodText.show()
+	$UpgradeMask.show()
+	$UpgradeMaskText.show()
+	$UpgradePill.show()
+	$UpgradePillText.show()
+	$UpgradeTest.show()
+	$UpgradeTestText.show()
+	$UpgradeVaccine.show()
+	$UpgradeVaccineText.show()
+	$Money.show()
+	$EffectDescription.show()
