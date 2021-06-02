@@ -44,7 +44,7 @@ func _ready():
 	$UpgradeVaccine.play("Locked")
 	score = 0
 	$Player.lifes = 3
-
+	$Background.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
