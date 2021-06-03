@@ -110,15 +110,15 @@ func _on_Player_exit():
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkPlayerInput():
 	if $Player.isIdleing() == true:
-		if Input.is_action_pressed("w") && $Player.unlockedNeeds.find("Blood") > -1:
+		if Input.is_action_pressed("q") && $Player.unlockedNeeds.find("Blood") > -1:
 			$Player.playBloodAnim()
-		if Input.is_action_pressed("q") && $Player.unlockedNeeds.find("Mask") > -1:
+		if Input.is_action_pressed("w") && $Player.unlockedNeeds.find("Mask") > -1:
 			$Player.playMaskAnim()
 		if Input.is_action_pressed("e") && $Player.unlockedNeeds.find("Pill") > -1:
 			$Player.playPillAnim()
 		if Input.is_action_pressed("r") && $Player.unlockedNeeds.find("Test") > -1:
 			$Player.playTestAnim()
-		if Input.is_action_pressed("a") && $Player.unlockedNeeds.find("Vaccine") > -1:
+		if Input.is_action_pressed("t") && $Player.unlockedNeeds.find("Vaccine") > -1:
 			$Player.playVaccineAnim()
 			
 	if Input.is_action_pressed("1"):
