@@ -1,4 +1,4 @@
-[gd_scene load_steps=1126 format=2]
+[gd_scene load_steps=1127 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
@@ -1108,6 +1108,7 @@
 [ext_resource path="res://backgrounds/background1.png" type="Texture" id=1106]
 [ext_resource path="res://backgrounds/background2.png" type="Texture" id=1107]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=1108]
+[ext_resource path="res://fonts/hud.tres" type="DynamicFont" id=1109]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -1119,7 +1120,7 @@ animations = [ {
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1416.73, 581.527, 0, 0, 0, 0, 0.404053, 582.716 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1344.69, 580.987, 0, 0, 0, 0, 0.404053, 582.716 )
 }
 
 [sub_resource type="SpriteFrames" id=3]
@@ -1408,7 +1409,7 @@ script = ExtResource( 3 )
 Enemy = ExtResource( 2 )
 
 [node name="Background" type="AnimatedSprite" parent="."]
-position = Vector2( 650, 300.602 )
+position = Vector2( 649.126, 300.602 )
 frames = SubResource( 1 )
 animation = "background"
 
@@ -1422,7 +1423,7 @@ wait_time = 3.0
 curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="EnemyPath"]
-position = Vector2( 1416.73, 566.527 )
+position = Vector2( 1356.87, 564.35 )
 rotation = 3.14086
 v_offset = -15.0
 rotate = false
@@ -1450,10 +1451,14 @@ anchor_left = -1.35634e-07
 anchor_top = 0.00125178
 anchor_right = -1.35634e-07
 anchor_bottom = 0.00125178
-margin_left = 263.0
-margin_top = 29.0
-margin_right = 294.0
-margin_bottom = 53.0
+margin_left = 337.747
+margin_top = 248.376
+margin_right = 406.747
+margin_bottom = 322.376
+custom_fonts/font = ExtResource( 1109 )
+custom_colors/font_color = Color( 0.972549, 0.109804, 0.109804, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false

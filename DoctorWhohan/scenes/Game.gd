@@ -72,7 +72,7 @@ func _on_Player_hit():
 #Wird aufgerufen, wenn alle Leben verbraucht sind
 func gameOver():
 	$Player.hide()
-	$HUD.show_game_over()
+	$HUD.show_game_over(score)
 
 
 #Funktion, die Anzahl der Leben überprüft 
@@ -422,3 +422,4 @@ func showAll():
 	$UpgradeVaccineText.show()
 	$Money.show()
 	$EffectDescription.show()
+	
