@@ -72,7 +72,6 @@ __meta__ = {
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
-one_shot = true
 
 [node name="ScoreMsg" type="Label" parent="."]
 anchor_left = -0.000951773
