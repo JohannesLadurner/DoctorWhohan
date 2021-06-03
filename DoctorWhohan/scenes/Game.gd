@@ -21,6 +21,12 @@ var upgradeTestCosts = 100
 var upgradeCostsFactor = 1.5
 var upgradeSpeedBy = 0.5
 
+var bloodLevel = 1
+var pillLevel = 1
+var vaccineLevel = 1
+var maskLevel = 1
+var testLevel = 1
+
 ########ENEMY##########
 var enemies = [] #Enemys die gespawnt sind
 var enemyBaseSpeed = 50
@@ -127,6 +133,8 @@ func checkPlayerInput():
 			$Player.updateAnimationSpeeds()
 			$UpgradeBlood.play("Upgrade")
 			$Player.money = $Player.money - upgradeBloodCosts
+			bloodLevel = bloodLevel + 1
+			$LevelBloodText.text = bloodLevel as String
 			upgradeBloodCosts = (upgradeBloodCosts * upgradeCostsFactor) as int
 			$UpgradeBloodText.text = "$"+upgradeBloodCosts as String
 	if Input.is_action_pressed("2"):
@@ -135,6 +143,8 @@ func checkPlayerInput():
 			$Player.updateAnimationSpeeds()
 			$UpgradeMask.play("Upgrade")
 			$Player.money = $Player.money - upgradeMaskCosts
+			maskLevel = maskLevel + 1
+			$LevelMaskText.text = maskLevel as String
 			upgradeMaskCosts = (upgradeMaskCosts * upgradeCostsFactor) as int
 			$UpgradeMaskText.text = "$"+upgradeMaskCosts as String
 	if Input.is_action_pressed("3"):
@@ -143,6 +153,8 @@ func checkPlayerInput():
 			$Player.updateAnimationSpeeds()
 			$UpgradePill.play("Upgrade")
 			$Player.money = $Player.money - upgradePillCosts
+			pillLevel = pillLevel + 1
+			$LevelPillText.text = pillLevel as String
 			upgradePillCosts = (upgradePillCosts * upgradeCostsFactor) as int
 			$UpgradePillText.text = "$"+upgradePillCosts as String
 	if Input.is_action_pressed("4"):
@@ -151,6 +163,8 @@ func checkPlayerInput():
 			$Player.updateAnimationSpeeds()
 			$UpgradeTest.play("Upgrade")
 			$Player.money = $Player.money - upgradeTestCosts
+			testLevel = testLevel + 1
+			$LevelTestText.text = testLevel as String
 			upgradeTestCosts = (upgradeTestCosts * upgradeCostsFactor) as int
 			$UpgradeTestText.text = "$"+upgradeTestCosts as String
 	if Input.is_action_pressed("5"):
@@ -159,6 +173,8 @@ func checkPlayerInput():
 			$Player.updateAnimationSpeeds()
 			$UpgradeVaccine.play("Upgrade")
 			$Player.money = $Player.money - upgradeMaskCosts
+			vaccineLevel = vaccineLevel + 1
+			$LevelVaccineText.text = vaccineLevel as String
 			upgradeVaccineCosts = (upgradeVaccineCosts * upgradeCostsFactor) as int
 			$UpgradeVaccineText.text = "$"+upgradeVaccineCosts as String
 
@@ -403,6 +419,12 @@ func hideStart():
 	$UpgradeVaccineText.hide()
 	$Money.hide()
 	$EffectDescription.hide()
+	$LevelBloodText.hide()
+	$LevelMaskText.hide()
+	$LevelPillText.hide()
+	$LevelTestText.hide()
+	$LevelVaccineText.hide()
+	$Score.hide()
 	
 #show all things
 func showAll():
@@ -422,6 +444,12 @@ func showAll():
 	$UpgradeTestText.show()
 	$UpgradeVaccine.show()
 	$UpgradeVaccineText.show()
+	$LevelBloodText.show()
+	$LevelMaskText.show()
+	$LevelPillText.show()
+	$LevelTestText.show()
+	$LevelVaccineText.show()
 	$Money.show()
 	$EffectDescription.show()
+	$Score.show()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=1127 format=2]
+[gd_scene load_steps=1132 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
@@ -1404,6 +1404,26 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1104 )
 
+[sub_resource type="DynamicFont" id=18]
+size = 10
+font_data = ExtResource( 1104 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 10
+font_data = ExtResource( 1104 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 10
+font_data = ExtResource( 1104 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 10
+font_data = ExtResource( 1104 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 10
+font_data = ExtResource( 1104 )
+
 [node name="Game" type="Node"]
 script = ExtResource( 3 )
 Enemy = ExtResource( 2 )
@@ -1605,6 +1625,66 @@ __meta__ = {
 }
 
 [node name="HUD" parent="." instance=ExtResource( 1108 )]
+
+[node name="LevelBloodText" type="Label" parent="."]
+margin_left = 679.0
+margin_top = 64.0
+margin_right = 718.0
+margin_bottom = 93.0
+custom_fonts/font = SubResource( 18 )
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelMaskText" type="Label" parent="."]
+margin_left = 778.335
+margin_top = 64.0
+margin_right = 818.335
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 19 )
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelPillText" type="Label" parent="."]
+margin_left = 878.678
+margin_top = 63.991
+margin_right = 917.678
+margin_bottom = 91.991
+custom_fonts/font = SubResource( 20 )
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelTestText" type="Label" parent="."]
+margin_left = 980.772
+margin_top = 64.4072
+margin_right = 1015.77
+margin_bottom = 92.4072
+custom_fonts/font = SubResource( 21 )
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelVaccineText" type="Label" parent="."]
+margin_left = 1079.88
+margin_top = 64.4072
+margin_right = 1116.88
+margin_bottom = 92.4072
+custom_fonts/font = SubResource( 22 )
+text = "1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="exit" from="Player" to="." method="_on_Player_exit"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
