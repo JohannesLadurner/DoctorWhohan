@@ -51,29 +51,29 @@ animations = [ {
 "name": "Mask",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": false,
-"name": "Blood",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 22 ) ],
 "loop": false,
 "name": "Pill",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 31 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 16 ) ],
-"loop": false,
-"name": "Vaccine",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 33 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 35 ) ],
 "loop": false,
 "name": "Test",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "Blood",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 31 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "Vaccine",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 41.9562, 80.1656 )
+extents = Vector2( 53.8037, 80.1656 )
 
 [node name="Player" type="Area2D"]
 script = ExtResource( 2 )
@@ -84,7 +84,7 @@ frames = SubResource( 1 )
 animation = "Test"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.52478, -0.810509 )
+position = Vector2( 37.606, -0.810509 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]

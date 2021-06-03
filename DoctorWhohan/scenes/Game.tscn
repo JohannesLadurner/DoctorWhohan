@@ -1120,7 +1120,7 @@ animations = [ {
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1344.69, 580.987, 0, 0, 0, 0, 0.404053, 582.716 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1434.28, 585.268, 0, 0, 0, 0, 0.404053, 582.716 )
 }
 
 [sub_resource type="SpriteFrames" id=3]
@@ -1423,7 +1423,7 @@ wait_time = 3.0
 curve = SubResource( 2 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="EnemyPath"]
-position = Vector2( 1344.69, 565.987 )
+position = Vector2( 1434.28, 570.268 )
 rotation = 3.14086
 v_offset = -15.0
 rotate = false
