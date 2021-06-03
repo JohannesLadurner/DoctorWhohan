@@ -44,6 +44,7 @@ func _process(delta):
 		checkPlayerInput()
 		checkEnemyTreated()
 		updateUpgradeIcons()
+		updateMoney()
 		if newRoundBeginning == true && enemies.size() == 0: #Start new round when all enemies are gone
 			initNewRound()
 			newRoundBeginning = false
@@ -166,7 +167,7 @@ func checkEnemyTreated():
 		for i in enemies.size():
 			if enemies[i].isInside == true && enemies[i].gotTreated == false && enemies[i].needName == $Player/AnimatedSprite.animation:
 				enemies[i].gotTreated = true
-				$Player.money = $Player.money + 10
+				$Player.money = $Player.money + 20
 
 func addRandomNeed():
 	var allNeedTypes = needType.keys()
@@ -191,8 +192,22 @@ func addRandomNeed():
 		return allNeedTypes[index]
 	return null
 
+func updateMoney():
+	var currMoney = $Money.text.substr(8, -1) as int
+	if currMoney < $Player.money:
+		if currMoney + 20 >= $Player.money:
+			currMoney = currMoney + 1
+		else:
+			currMoney = currMoney + ((($Player.money - currMoney) * 5) / 100) #Plus 2% of the difference
+		$Money.text = "Money: $" + currMoney as String
+	if currMoney > $Player.money:
+		if currMoney - 20 <= $Player.money:
+			currMoney = currMoney - 1
+		else:
+			currMoney = currMoney - (((currMoney - $Player.money) * 5) / 100) #Minus 2% of the difference
+		$Money.text = "Money: $" + currMoney as String
+	
 func updateUpgradeIcons():
-	$Money.text = "Money: $" + $Player.money as String
 	#Update Blood
 	if $UpgradeBlood.animation != "Locked":
 		if $Player.money >= upgradeBloodCosts:
@@ -271,6 +286,7 @@ func playRoundAnimation(roundNumber, reverse):
 	$RoundTitle.play("Title", reverse) #play the animation
 	$RoundNumLeft.play(leftDigit as String, reverse)
 	$RoundNumRight.play(rightDigit as String, reverse)
+
 
 func addNewRandomEffect():
 	var effectChosen = false
