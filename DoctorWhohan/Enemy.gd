@@ -16,8 +16,26 @@ func init(unlockedNeeds):
 	var rndNeed = randi() % unlockedNeeds.size()
 	needName = unlockedNeeds[rndNeed]
 	$Need.play(needName)
-	$AnimatedSprite.play("WomanWalkRed")
 	
+	var allCharacters = $AnimatedSprite.frames.get_animation_names()
+	var rnd = randi() % allCharacters.size()
+	var character = allCharacters[rnd]
+	if needName == "Mask":
+		while character.begins_with("Mask"): #Choose any character that does NOT wear a mask
+			rnd = randi() % allCharacters.size()
+			character = allCharacters[rnd]
+	else:
+		while !character.begins_with("Mask"): #Choose only characters that wears a mask
+			rnd = randi() % allCharacters.size()
+			character = allCharacters[rnd]
+	
+	$AnimatedSprite.play(character)
+
+func putOnMask():
+	var maskAnimation = "Mask" + $AnimatedSprite.animation
+	$AnimatedSprite.play(maskAnimation)
+
+
 # Wenn Bildschirm verlassen wird
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

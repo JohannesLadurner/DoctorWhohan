@@ -167,6 +167,8 @@ func checkEnemyTreated():
 		for i in enemies.size():
 			if enemies[i].isInside == true && enemies[i].gotTreated == false && enemies[i].needName == $Player/AnimatedSprite.animation:
 				enemies[i].gotTreated = true
+				if enemies[i].needName == "Mask":
+					enemies[i].putOnMask()
 				$Player.money = $Player.money + 20
 
 func addRandomNeed():
