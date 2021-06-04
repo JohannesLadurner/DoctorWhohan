@@ -79,6 +79,7 @@ func _on_Player_hit():
 func gameOver():
 	$Player.hide()
 	$HUD.show_game_over(score)
+	backToStart()
 
 
 #Funktion, die Anzahl der Leben überprüft 
@@ -452,4 +453,20 @@ func showAll():
 	$Money.show()
 	$EffectDescription.show()
 	$Score.show()
-	
+
+func backToStart():
+	start = false
+	upgradeBloodCosts = 100
+	upgradePillCosts = 100
+	upgradeVaccineCosts = 100
+	upgradeMaskCosts = 100
+	upgradeTestCosts = 100
+	upgradeCostsFactor = 1.5
+	upgradeSpeedBy = 0.5
+	bloodLevel = 1
+	pillLevel = 1
+	vaccineLevel = 1
+	maskLevel = 1
+	testLevel = 1
+	enemyBaseSpeed = 50
+	roundNr = 0
