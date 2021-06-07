@@ -18,6 +18,7 @@ var upgradePillCosts = 100
 var upgradeVaccineCosts = 100
 var upgradeMaskCosts = 100
 var upgradeTestCosts = 100
+var buyLifeCosts = 100
 var upgradeCostsFactor = 1.5
 var upgradeSpeedBy = 0.5
 
@@ -178,7 +179,14 @@ func checkPlayerInput():
 			$LevelVaccineText.text = vaccineLevel as String
 			upgradeVaccineCosts = (upgradeVaccineCosts * upgradeCostsFactor) as int
 			$UpgradeVaccineText.text = "$"+upgradeVaccineCosts as String
-
+	if Input.is_action_pressed("6"):
+		if $BuyLife.animation == "Available":
+			$Player.lifes = $Player.lifes + 1
+			$BuyLife.play("Buy")
+			$Player.money = $Player.money - buyLifeCosts
+			buyLifeCosts = (buyLifeCosts * upgradeCostsFactor) as int
+			$BuyLifeText.text = "$"+buyLifeCosts as String
+			
 func checkEnemyTreated():
 	if enemies.size() != 0:
 		for i in enemies.size():
@@ -277,8 +285,17 @@ func updateUpgradeIcons():
 			if $UpgradeTest.animation == "Available":
 				$UpgradeTest.play("Unavailable")
 			$UpgradeTestText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
-
-
+	#Buy Life
+	if $Player.lifes < 5:
+		if $Player.money >= buyLifeCosts:
+			if $BuyLife.animation == "Unavailable":
+				$BuyLife.play("Available")
+			$BuyLifeText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
+		if $Player.money < buyLifeCosts:
+			if $BuyLife.animation == "Available":
+				$BuyLife.play("Unavailable")
+			$BuyLifeText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
+	
 #############################################
 ############Rounds###########################
 #############################################
@@ -378,6 +395,11 @@ func _on_UpgradeVaccine_animation_finished():
 		$UpgradeVaccine.play("Available")
 	pass
 
+func _on_BuyLife_animation_finished():
+	if $BuyLife.animation == "Buy":
+		$BuyLife.play("Available")
+	pass
+	
 #############################################
 ###################HUD######################
 #############################################
@@ -396,6 +418,7 @@ func _on_HUD_start_game():
 	$UpgradePill.play("Locked")
 	$UpgradeTest.play("Locked")
 	$UpgradeVaccine.play("Locked")
+	$BuyLife.play("Available")
 	score = 0
 	$Player.lifes = 3
 	$HUD.update_score(score)
@@ -418,6 +441,8 @@ func hideStart():
 	$UpgradeTestText.hide()
 	$UpgradeVaccine.hide()
 	$UpgradeVaccineText.hide()
+	$BuyLife.hide()
+	$BuyLifeText.hide()
 	$Money.hide()
 	$EffectDescription.hide()
 	$LevelBloodText.hide()
@@ -426,6 +451,7 @@ func hideStart():
 	$LevelTestText.hide()
 	$LevelVaccineText.hide()
 	$Score.hide()
+	
 	
 #show all things
 func showAll():
@@ -445,6 +471,8 @@ func showAll():
 	$UpgradeTestText.show()
 	$UpgradeVaccine.show()
 	$UpgradeVaccineText.show()
+	$BuyLife.show()
+	$BuyLifeText.show()
 	$LevelBloodText.show()
 	$LevelMaskText.show()
 	$LevelPillText.show()
@@ -470,3 +498,6 @@ func backToStart():
 	testLevel = 1
 	enemyBaseSpeed = 50
 	roundNr = 0
+
+
+
