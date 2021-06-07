@@ -4,6 +4,7 @@ export (PackedScene) var Enemy
 
 var score #Punktestand
 var start = false
+
 ########NEEDS#########
 enum needType{
 	Blood,
@@ -286,7 +287,7 @@ func updateUpgradeIcons():
 				$UpgradeTest.play("Unavailable")
 			$UpgradeTestText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
 	#Buy Life
-	if $Player.lifes < 5:
+	if $Player.lifes < 3:
 		if $Player.money >= buyLifeCosts:
 			if $BuyLife.animation == "Unavailable":
 				$BuyLife.play("Available")
@@ -295,6 +296,11 @@ func updateUpgradeIcons():
 			if $BuyLife.animation == "Available":
 				$BuyLife.play("Unavailable")
 			$BuyLifeText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
+	else:
+		if $BuyLife.animation == "Available":
+			$BuyLife.play("Unavailable")
+			$BuyLifeText.add_color_override("font_color", Color8(100, 100, 100, 255)) #Red
+			
 	
 #############################################
 ############Rounds###########################
