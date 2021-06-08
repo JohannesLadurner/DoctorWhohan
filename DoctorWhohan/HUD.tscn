@@ -1,10 +1,381 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://fonts/hud.tres" type="DynamicFont" id=2]
+[ext_resource path="res://buyIcons/Blood/BloodAvailable.png" type="Texture" id=3]
+[ext_resource path="res://fonts/instructions.tres" type="DynamicFont" id=4]
+[ext_resource path="res://buyIcons/Test/TestAvailable.png" type="Texture" id=5]
+[ext_resource path="res://buyIcons/Pill/PillAvailable.png" type="Texture" id=6]
+[ext_resource path="res://buyIcons/Life/LifeAvailable.png" type="Texture" id=7]
+[ext_resource path="res://needsTypes/blood/Blood0.png" type="Texture" id=8]
+[ext_resource path="res://buyIcons/Vaccine/VaccineAvailable.png" type="Texture" id=9]
+[ext_resource path="res://buyIcons/Mask/MaskAvailable.png" type="Texture" id=10]
+[ext_resource path="res://needsTypes/vaccine/vaccine0.png" type="Texture" id=11]
+[ext_resource path="res://needsTypes/test/Test0.png" type="Texture" id=12]
+[ext_resource path="res://needsTypes/pill/Pill0.png" type="Texture" id=13]
+[ext_resource path="res://needsTypes/mask/Mask0.png" type="Texture" id=14]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
+
+[node name="ColorRectInstruct" type="ColorRect" parent="."]
+visible = false
+show_behind_parent = true
+anchor_left = -0.0019034
+anchor_top = 0.000421956
+anchor_right = -0.00190345
+anchor_bottom = 0.000421855
+margin_left = 320.65
+margin_top = 40.8396
+margin_right = 1070.65
+margin_bottom = 567.84
+color = Color( 0.972549, 0.882353, 0.882353, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BloodUp" type="TextureRect" parent="ColorRectInstruct"]
+anchor_left = 0.00121232
+anchor_top = 0.00172543
+anchor_right = 0.00121232
+anchor_bottom = 0.00172543
+margin_left = 0.90921
+margin_top = 0.909271
+margin_right = 128.909
+margin_bottom = 128.909
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BloodUpInstr" type="Label" parent="ColorRectInstruct"]
+anchor_left = -0.0012124
+anchor_right = -0.0012124
+margin_left = 86.0
+margin_top = 24.8165
+margin_right = 328.0
+margin_bottom = 70.8165
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"1\" TO UPGRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaskUp" type="TextureRect" parent="ColorRectInstruct"]
+margin_left = 0.818451
+margin_top = 76.2863
+margin_right = 128.818
+margin_bottom = 204.286
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaskUp Instr" type="Label" parent="ColorRectInstruct"]
+margin_left = 87.0907
+margin_top = 96.6492
+margin_right = 329.091
+margin_bottom = 142.649
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"2\" TO UPGRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PillUp" type="TextureRect" parent="ColorRectInstruct"]
+margin_left = 2.0
+margin_top = 152.0
+margin_right = 130.0
+margin_bottom = 280.0
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaskUpInstr" type="Label" parent="ColorRectInstruct"]
+margin_left = 87.2742
+margin_top = 179.393
+margin_right = 329.274
+margin_bottom = 225.393
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"3\" TO UPGRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestUp" type="TextureRect" parent="ColorRectInstruct"]
+anchor_top = 0.00172543
+anchor_bottom = 0.00172543
+margin_left = 2.09055
+margin_top = 229.044
+margin_right = 130.091
+margin_bottom = 357.044
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestUpInstr" type="Label" parent="ColorRectInstruct"]
+margin_left = 89.2742
+margin_top = 255.772
+margin_right = 331.274
+margin_bottom = 301.772
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"4\" TO UPGRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VaccineUp" type="TextureRect" parent="ColorRectInstruct"]
+anchor_left = 0.0012124
+anchor_top = 0.00172543
+anchor_right = 0.0012124
+anchor_bottom = 0.00172543
+margin_left = 2.09055
+margin_top = 303.242
+margin_right = 130.091
+margin_bottom = 431.242
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VaccineUpInstr" type="Label" parent="ColorRectInstruct"]
+margin_left = 86.6371
+margin_top = 329.423
+margin_right = 328.637
+margin_bottom = 375.423
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"5\" TO UPGRADE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyLife" type="TextureRect" parent="ColorRectInstruct"]
+anchor_left = 0.0586667
+anchor_top = 0.793
+anchor_right = 0.0586667
+anchor_bottom = 0.793
+margin_left = -41.6371
+margin_top = -42.4574
+margin_right = 86.3629
+margin_bottom = 85.5426
+rect_scale = Vector2( 0.639403, 0.662288 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BuyLifeInst" type="Label" parent="ColorRectInstruct"]
+anchor_top = 0.00172531
+anchor_bottom = 0.00172531
+margin_left = 85.7278
+margin_top = 399.437
+margin_right = 327.728
+margin_bottom = 445.437
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"6\" TO BUY LIFE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UseBlood" type="TextureRect" parent="ColorRectInstruct"]
+anchor_left = 0.559274
+anchor_top = -0.748599
+anchor_right = 0.559274
+anchor_bottom = -0.748599
+margin_left = -3.73004
+margin_top = 376.984
+margin_right = 156.27
+margin_bottom = 536.984
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="UseBloodInst" type="Label" parent="ColorRectInstruct"]
+margin_left = 520.361
+margin_top = 20.2702
+margin_right = 762.361
+margin_bottom = 66.2702
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"Q\" TO USE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UseMask" type="TextureRect" parent="ColorRectInstruct"]
+anchor_left = 0.559274
+anchor_top = -0.593315
+anchor_right = 0.559274
+anchor_bottom = -0.593315
+margin_left = -5.54868
+margin_top = 376.984
+margin_right = 154.451
+margin_bottom = 536.984
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="UseMaskInst" type="Label" parent="ColorRectInstruct"]
+margin_left = 516.724
+margin_top = 99.377
+margin_right = 758.724
+margin_bottom = 145.377
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"W\" TO USE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsePill" type="TextureRect" parent="ColorRectInstruct"]
+anchor_left = 0.558304
+anchor_top = -0.435962
+anchor_right = 0.558304
+anchor_bottom = -0.435961
+margin_left = -4.63934
+margin_top = 377.893
+margin_right = 155.361
+margin_bottom = 537.893
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="UsePillInst" type="Label" parent="ColorRectInstruct"]
+margin_left = 516.905
+margin_top = 186.667
+margin_right = 758.905
+margin_bottom = 232.667
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"E\" TO USE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UseTest" type="TextureRect" parent="ColorRectInstruct"]
+anchor_left = 0.558186
+anchor_top = -0.273214
+anchor_right = 0.558186
+anchor_bottom = -0.271316
+margin_left = -4.63937
+margin_top = 376.074
+margin_right = 155.361
+margin_bottom = 536.074
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="UseTestInst" type="Label" parent="ColorRectInstruct"]
+margin_left = 516.268
+margin_top = 268.865
+margin_right = 758.268
+margin_bottom = 314.865
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"R\" TO USE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UseVaccine" type="TextureRect" parent="ColorRectInstruct"]
+anchor_left = 0.559758
+anchor_top = -0.105381
+anchor_right = 0.559758
+anchor_bottom = -0.105381
+margin_left = -4.63937
+margin_top = 376.984
+margin_right = 155.361
+margin_bottom = 536.984
+rect_scale = Vector2( 0.639403, 0.662288 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="UseVaccInst" type="Label" parent="ColorRectInstruct"]
+margin_left = 514.268
+margin_top = 361.065
+margin_right = 756.268
+margin_bottom = 407.065
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"T\" TO USE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ColorRectInstruct"]
+anchor_left = -0.0012124
+anchor_right = -0.0012124
+margin_left = 508.591
+margin_top = 432.272
+margin_right = 686.591
+margin_bottom = 512.272
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.847059, 0.0745098, 0.0745098, 1 )
+custom_colors/font_color = Color( 0.811765, 0.0745098, 0.0745098, 1 )
+custom_colors/font_color_hover = Color( 0.827451, 0.0705882, 0.0705882, 1 )
+custom_colors/font_color_pressed = Color( 0.827451, 0.105882, 0.105882, 1 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 show_behind_parent = true
@@ -21,29 +392,69 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="."]
-margin_left = 615.703
-margin_top = 80.3944
-margin_right = 921.703
-margin_bottom = 154.394
+[node name="Instructions" type="Button" parent="ColorRect"]
+anchor_top = 0.00412435
+anchor_bottom = 0.00412435
+margin_left = 62.2876
+margin_top = 422.389
+margin_right = 369.525
+margin_bottom = 502.389
+rect_pivot_offset = Vector2( 161.457, 166.177 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.933333, 0.0745098, 0.0745098, 1 )
+custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
+custom_colors/font_color_hover = Color( 0.933333, 0.0745098, 0.0745098, 1 )
+custom_colors/font_color_pressed = Color( 0.933333, 0.0745098, 0.0745098, 1 )
+text = "INSTRUCTIONS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreMsg" type="Label" parent="ColorRect"]
+anchor_left = -0.000951773
+anchor_right = -0.000951773
+margin_left = 26.1299
+margin_top = 49.0812
+margin_right = 332.13
+margin_bottom = 123.081
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "0"
+text = "SCORE:"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Message" type="Label" parent="."]
+[node name="MessageTimer" type="Timer" parent="ColorRect"]
+wait_time = 2.0
+
+[node name="Start" type="Button" parent="ColorRect"]
+anchor_left = -0.000951773
+anchor_right = -0.000951773
+margin_left = 65.281
+margin_top = 303.61
+margin_right = 371.281
+margin_bottom = 383.61
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_disabled = Color( 0.933333, 0.0745098, 0.0745098, 1 )
+custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="ColorRect"]
 anchor_left = 0.000951679
 anchor_right = 0.000951679
-margin_left = 531.76
-margin_top = 200.812
-margin_right = 837.76
-margin_bottom = 274.812
+margin_left = 55.5952
+margin_top = 168.812
+margin_right = 387.595
+margin_bottom = 242.812
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -55,40 +466,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="Button" parent="."]
-margin_left = 543.117
-margin_top = 333.135
-margin_right = 849.117
-margin_bottom = 413.135
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color_disabled = Color( 0.933333, 0.0745098, 0.0745098, 1 )
-custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "START"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MessageTimer" type="Timer" parent="."]
-wait_time = 2.0
-
-[node name="ScoreMsg" type="Label" parent="."]
-anchor_left = -0.000951773
-anchor_right = -0.000951773
-margin_left = 503.966
-margin_top = 81.0812
-margin_right = 809.966
-margin_bottom = 155.081
+[node name="Score" type="Label" parent="ColorRect"]
+margin_left = 138.703
+margin_top = 48.3944
+margin_right = 444.703
+margin_bottom = 122.394
+rect_scale = Vector2( 1.00366, 1 )
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "SCORE:"
+text = "0"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
-[connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
+[connection signal="pressed" from="ColorRectInstruct/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ColorRect/Instructions" to="." method="_on_Instructions_pressed"]
+[connection signal="timeout" from="ColorRect/MessageTimer" to="." method="_on_MessageTimer_timeout"]
+[connection signal="pressed" from="ColorRect/Start" to="." method="_on_Start_pressed"]

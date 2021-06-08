@@ -13,38 +13,44 @@ func _ready():
 #	pass
 
 func show_message(text):
-	$Message.text = text
-	$Message.show()
-	$MessageTimer.start()
+	$ColorRect/Message.text = text
+	$ColorRect/Message.show()
+	$ColorRect/MessageTimer.start()
 
 func show_game_over(score):
 	show_message("GAME OVER")
 	$ColorRect.show()
-	$ScoreMsg.show()
-	$Score.text = str(score)
-	$Score.show()
-	yield($MessageTimer, "timeout")
+	$ColorRectInstruct.hide()
+	$ColorRect/Score.text = str(score)
+	$ColorRect/Score.show()
+	yield($ColorRect/MessageTimer, "timeout")
 
-	$Message.text = "DOCTOR WHOHAN"
-	$Message.show()
+	$ColorRect/Message.text = "DOCTOR WHOHAN"
+	$ColorRect/Message.show()
 	yield(get_tree().create_timer(1), "timeout")
-	$Start.show()
+	$ColorRect/Start.show()
+	$ColorRect/Instructions.show()
 	
 
 func update_score(score):
-	$Score.text = str(score)
+	
+	$ColorRect/Score.text = str(score)
 
 func _on_MessageTimer_timeout():
-	$Message.hide()
+	$ColorRect/Message.hide()
 
 func _on_Start_pressed():
 	emit_signal("start_game")
 	
 func hideAll():
 	$ColorRect.hide()
-	$Start.hide()
-	$Message.hide()
-	$ScoreMsg.hide()
-	$Score.hide()
 	
+	
+func _on_Button_pressed():
+	$ColorRectInstruct.hide()
+	$ColorRect.show()
 
+
+func _on_Instructions_pressed():
+	$ColorRectInstruct.show()
+	$ColorRect.hide()
