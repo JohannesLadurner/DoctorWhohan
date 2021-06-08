@@ -1460,7 +1460,7 @@ script = ExtResource( 3 )
 Enemy = ExtResource( 2 )
 
 [node name="Background" type="AnimatedSprite" parent="."]
-position = Vector2( 648.038, 301.69 )
+position = Vector2( 649.126, 300.602 )
 frames = SubResource( 1 )
 animation = "background"
 
@@ -1486,13 +1486,25 @@ frames = SubResource( 3 )
 animation = "Life"
 
 [node name="LifeTwo" type="AnimatedSprite" parent="."]
-position = Vector2( 107.043, 39.1178 )
+position = Vector2( 107.043, 40.2062 )
 scale = Vector2( 0.729314, 0.729314 )
 frames = SubResource( 3 )
 animation = "Life"
 
 [node name="LifeThree" type="AnimatedSprite" parent="."]
 position = Vector2( 177.709, 39.1178 )
+scale = Vector2( 0.729314, 0.729314 )
+frames = SubResource( 3 )
+animation = "Life"
+
+[node name="LifeFour" type="AnimatedSprite" parent="."]
+position = Vector2( 245.011, 39.2062 )
+scale = Vector2( 0.729314, 0.729314 )
+frames = SubResource( 3 )
+animation = "Life"
+
+[node name="LifeFive" type="AnimatedSprite" parent="."]
+position = Vector2( 313.136, 40.2062 )
 scale = Vector2( 0.729314, 0.729314 )
 frames = SubResource( 3 )
 animation = "Life"

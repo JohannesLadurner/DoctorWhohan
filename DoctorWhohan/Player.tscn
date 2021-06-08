@@ -84,7 +84,7 @@ frames = SubResource( 1 )
 animation = "Test"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 37.606, -0.810509 )
+position = Vector2( 31.0846, -0.514084 )
 shape = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Player_body_exited"]

@@ -90,18 +90,38 @@ func checkLife():
 		$LifeOne.show()
 		$LifeTwo.show()
 		$LifeThree.show()
+		$LifeFour.hide()
+		$LifeFive.hide()
 	elif $Player.lifes == 2:
 		$LifeOne.show()
 		$LifeTwo.show()
 		$LifeThree.hide()
+		$LifeFour.hide()
+		$LifeFive.hide()
 	elif $Player.lifes == 1:
 		$LifeOne.show()
 		$LifeTwo.hide()
 		$LifeThree.hide()
+		$LifeFour.hide()
+		$LifeFive.hide()
+	elif $Player.lifes == 4:
+		$LifeOne.show()
+		$LifeTwo.show()
+		$LifeThree.show()
+		$LifeFour.show()
+		$LifeFive.hide()
+	elif $Player.lifes == 5:
+		$LifeOne.show()
+		$LifeTwo.show()
+		$LifeThree.show()
+		$LifeFour.show()
+		$LifeFive.show()
 	else:
 		$LifeOne.hide()
 		$LifeTwo.hide()
 		$LifeThree.hide()
+		$LifeFour.hide()
+		$LifeFive.hide()
 		gameOver()
 
 
@@ -434,6 +454,8 @@ func hideStart():
 	$LifeOne.hide()
 	$LifeTwo.hide()
 	$LifeThree.hide()
+	$LifeFour.hide()
+	$LifeFive.hide()
 	$RoundTitle.hide()
 	$RoundNumLeft.hide()
 	$RoundNumRight.hide()
