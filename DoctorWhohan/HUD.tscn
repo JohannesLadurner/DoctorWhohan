@@ -21,8 +21,8 @@ script = ExtResource( 1 )
 [node name="ColorRectInstruct" type="ColorRect" parent="."]
 visible = false
 show_behind_parent = true
-anchor_left = -0.0019034
-anchor_top = 0.000421956
+anchor_left = -0.00190345
+anchor_top = 0.000421855
 anchor_right = -0.00190345
 anchor_bottom = 0.000421855
 margin_left = 320.65
@@ -194,8 +194,8 @@ __meta__ = {
 }
 
 [node name="BuyLifeInst" type="Label" parent="ColorRectInstruct"]
-anchor_top = 0.00172531
-anchor_bottom = 0.00172531
+anchor_top = 0.00345068
+anchor_bottom = 0.00345068
 margin_left = 85.7278
 margin_top = 399.437
 margin_right = 327.728
@@ -360,6 +360,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Pause" type="Label" parent="ColorRectInstruct"]
+margin_left = 85.5443
+margin_top = 462.632
+margin_right = 327.544
+margin_bottom = 508.632
+rect_scale = Vector2( 1, 0.700424 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0.831373, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.858824, 0.0627451, 0.0627451, 1 )
+custom_colors/font_color_shadow = Color( 0.878431, 0.0745098, 0.0745098, 1 )
+text = "PRESS \"SPACE\" TO PAUSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Button" type="Button" parent="ColorRectInstruct"]
 anchor_left = -0.0012124
 anchor_right = -0.0012124
@@ -395,10 +410,10 @@ __meta__ = {
 [node name="Instructions" type="Button" parent="ColorRect"]
 anchor_top = 0.00412435
 anchor_bottom = 0.00412435
-margin_left = 62.2876
-margin_top = 422.389
-margin_right = 369.525
-margin_bottom = 502.389
+margin_left = 59.5598
+margin_top = 326.915
+margin_right = 366.797
+margin_bottom = 406.915
 rect_pivot_offset = Vector2( 161.457, 166.177 )
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_disabled = Color( 0.933333, 0.0745098, 0.0745098, 1 )
@@ -410,34 +425,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ScoreMsg" type="Label" parent="ColorRect"]
-anchor_left = -0.000951773
-anchor_right = -0.000951773
-margin_left = 26.1299
-margin_top = 49.0812
-margin_right = 332.13
-margin_bottom = 123.081
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "SCORE:"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="MessageTimer" type="Timer" parent="ColorRect"]
 wait_time = 2.0
 
 [node name="Start" type="Button" parent="ColorRect"]
 anchor_left = -0.000951773
 anchor_right = -0.000951773
-margin_left = 65.281
-margin_top = 303.61
-margin_right = 371.281
-margin_bottom = 383.61
+margin_left = 61.644
+margin_top = 214.501
+margin_right = 367.644
+margin_bottom = 294.501
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_disabled = Color( 0.933333, 0.0745098, 0.0745098, 1 )
 custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
@@ -451,10 +448,10 @@ __meta__ = {
 [node name="Message" type="Label" parent="ColorRect"]
 anchor_left = 0.000951679
 anchor_right = 0.000951679
-margin_left = 55.5952
-margin_top = 168.812
-margin_right = 387.595
-margin_bottom = 242.812
+margin_left = 50.1395
+margin_top = 53.3342
+margin_right = 382.14
+margin_bottom = 127.334
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -466,17 +463,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="ColorRect"]
-margin_left = 138.703
-margin_top = 48.3944
-margin_right = 444.703
-margin_bottom = 122.394
-rect_scale = Vector2( 1.00366, 1 )
-custom_fonts/font = ExtResource( 2 )
+[node name="Info" type="Label" parent="ColorRect"]
+anchor_left = -0.00120306
+anchor_top = -0.00172554
+anchor_right = -0.00120306
+anchor_bottom = -0.00172554
+margin_left = 4.67577
+margin_top = 438.866
+margin_right = 419.676
+margin_bottom = 512.866
 custom_colors/font_color = Color( 0.933333, 0.0745098, 0.0745098, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "0"
+text = "GAME BY LUKAS-12 AND JOHANNESLADURNER"
 align = 1
 valign = 1
 __meta__ = {

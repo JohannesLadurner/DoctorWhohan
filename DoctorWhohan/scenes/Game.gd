@@ -464,6 +464,8 @@ func _on_HUD_start_game():
 	$LifeOne.play()
 	$LifeTwo.play()
 	$LifeThree.play()
+	$LifeFour.play()
+	$LifeFive.play()
 	$UpgradeBlood.play("Locked")
 	$UpgradeMask.play("Locked")
 	$UpgradePill.play("Locked")
@@ -472,7 +474,7 @@ func _on_HUD_start_game():
 	$BuyLife.play("Available")
 	score = 0
 	$Player.lifes = 3
-	$HUD.update_score(score)
+	
 	
 #hide all things
 func hideStart():
@@ -537,21 +539,8 @@ func showAll():
 	$Score.show()
 
 func backToStart():
-	start = false
-	upgradeBloodCosts = 100
-	upgradePillCosts = 100
-	upgradeVaccineCosts = 100
-	upgradeMaskCosts = 100
-	upgradeTestCosts = 100
-	upgradeCostsFactor = 1.5
-	upgradeSpeedBy = 0.5
-	bloodLevel = 1
-	pillLevel = 1
-	vaccineLevel = 1
-	maskLevel = 1
-	testLevel = 1
-	enemyBaseSpeed = 50
-	roundNr = 0
+	get_tree().reload_current_scene()
+	
 
 
 

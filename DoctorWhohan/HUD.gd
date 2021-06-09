@@ -21,8 +21,6 @@ func show_game_over(score):
 	show_message("GAME OVER")
 	$ColorRect.show()
 	$ColorRectInstruct.hide()
-	$ColorRect/Score.text = str(score)
-	$ColorRect/Score.show()
 	yield($ColorRect/MessageTimer, "timeout")
 
 	$ColorRect/Message.text = "DOCTOR WHOHAN"
@@ -32,9 +30,6 @@ func show_game_over(score):
 	$ColorRect/Instructions.show()
 	
 
-func update_score(score):
-	
-	$ColorRect/Score.text = str(score)
 
 func _on_MessageTimer_timeout():
 	$ColorRect/Message.hide()
