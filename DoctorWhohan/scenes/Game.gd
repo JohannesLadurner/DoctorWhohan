@@ -4,6 +4,8 @@ export (PackedScene) var Enemy
 
 var score #Punktestand
 var start = false
+var gamePaused = false
+var pauseCoolDown = 0
 
 ########NEEDS#########
 enum needType{
@@ -48,8 +50,8 @@ func _ready():
 func _process(delta):
 	$Score.text = str(score)
 	if start == true:
-		checkLife()
 		checkPlayerInput()
+		checkLife()
 		checkEnemyTreated()
 		updateUpgradeIcons()
 		updateMoney()
@@ -138,76 +140,97 @@ func _on_Player_exit():
 
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkPlayerInput():
-	if $Player.isIdleing() == true:
-		if Input.is_action_pressed("q") && $Player.unlockedNeeds.find("Blood") > -1:
-			$Player.playBloodAnim()
-		if Input.is_action_pressed("w") && $Player.unlockedNeeds.find("Mask") > -1:
-			$Player.playMaskAnim()
-		if Input.is_action_pressed("e") && $Player.unlockedNeeds.find("Pill") > -1:
-			$Player.playPillAnim()
-		if Input.is_action_pressed("r") && $Player.unlockedNeeds.find("Test") > -1:
-			$Player.playTestAnim()
-		if Input.is_action_pressed("t") && $Player.unlockedNeeds.find("Vaccine") > -1:
-			$Player.playVaccineAnim()
+	if !gamePaused:
+		if $Player.isIdleing() == true:
+			if Input.is_action_pressed("q") && $Player.unlockedNeeds.find("Blood") > -1:
+				$Player.playBloodAnim()
+			if Input.is_action_pressed("w") && $Player.unlockedNeeds.find("Mask") > -1:
+				$Player.playMaskAnim()
+			if Input.is_action_pressed("e") && $Player.unlockedNeeds.find("Pill") > -1:
+				$Player.playPillAnim()
+			if Input.is_action_pressed("r") && $Player.unlockedNeeds.find("Test") > -1:
+				$Player.playTestAnim()
+			if Input.is_action_pressed("t") && $Player.unlockedNeeds.find("Vaccine") > -1:
+				$Player.playVaccineAnim()
 			
-	if Input.is_action_pressed("1"):
-		if $UpgradeBlood.animation == "Available":
-			$Player.bloodSpeed = $Player.bloodSpeed + upgradeSpeedBy
-			$Player.updateAnimationSpeeds()
-			$UpgradeBlood.play("Upgrade")
-			$Player.money = $Player.money - upgradeBloodCosts
-			bloodLevel = bloodLevel + 1
-			$LevelBloodText.text = bloodLevel as String
-			upgradeBloodCosts = (upgradeBloodCosts * upgradeCostsFactor) as int
-			$UpgradeBloodText.text = "$"+upgradeBloodCosts as String
-	if Input.is_action_pressed("2"):
-		if $UpgradeMask.animation == "Available":
-			$Player.maskSpeed = $Player.maskSpeed + upgradeSpeedBy
-			$Player.updateAnimationSpeeds()
-			$UpgradeMask.play("Upgrade")
-			$Player.money = $Player.money - upgradeMaskCosts
-			maskLevel = maskLevel + 1
-			$LevelMaskText.text = maskLevel as String
-			upgradeMaskCosts = (upgradeMaskCosts * upgradeCostsFactor) as int
-			$UpgradeMaskText.text = "$"+upgradeMaskCosts as String
-	if Input.is_action_pressed("3"):
-		if $UpgradePill.animation == "Available":
-			$Player.pillSpeed = $Player.pillSpeed + upgradeSpeedBy
-			$Player.updateAnimationSpeeds()
-			$UpgradePill.play("Upgrade")
-			$Player.money = $Player.money - upgradePillCosts
-			pillLevel = pillLevel + 1
-			$LevelPillText.text = pillLevel as String
-			upgradePillCosts = (upgradePillCosts * upgradeCostsFactor) as int
-			$UpgradePillText.text = "$"+upgradePillCosts as String
-	if Input.is_action_pressed("4"):
-		if $UpgradeTest.animation == "Available":
-			$Player.testSpeed = $Player.testSpeed + upgradeSpeedBy
-			$Player.updateAnimationSpeeds()
-			$UpgradeTest.play("Upgrade")
-			$Player.money = $Player.money - upgradeTestCosts
-			testLevel = testLevel + 1
-			$LevelTestText.text = testLevel as String
-			upgradeTestCosts = (upgradeTestCosts * upgradeCostsFactor) as int
-			$UpgradeTestText.text = "$"+upgradeTestCosts as String
-	if Input.is_action_pressed("5"):
-		if $UpgradeVaccine.animation == "Available":
-			$Player.vaccineSpeed = $Player.vaccineSpeed + upgradeSpeedBy
-			$Player.updateAnimationSpeeds()
-			$UpgradeVaccine.play("Upgrade")
-			$Player.money = $Player.money - upgradeMaskCosts
-			vaccineLevel = vaccineLevel + 1
-			$LevelVaccineText.text = vaccineLevel as String
-			upgradeVaccineCosts = (upgradeVaccineCosts * upgradeCostsFactor) as int
-			$UpgradeVaccineText.text = "$"+upgradeVaccineCosts as String
-	if Input.is_action_pressed("6"):
-		if $BuyLife.animation == "Available":
-			$Player.lifes = $Player.lifes + 1
-			$BuyLife.play("Buy")
-			$Player.money = $Player.money - buyLifeCosts
-			buyLifeCosts = (buyLifeCosts * upgradeCostsFactor) as int
-			$BuyLifeText.text = "$"+buyLifeCosts as String
-			
+		if Input.is_action_pressed("1"):
+			if $UpgradeBlood.animation == "Available":
+				$Player.bloodSpeed = $Player.bloodSpeed + upgradeSpeedBy
+				$Player.updateAnimationSpeeds()
+				$UpgradeBlood.play("Upgrade")
+				$Player.money = $Player.money - upgradeBloodCosts
+				bloodLevel = bloodLevel + 1
+				$LevelBloodText.text = bloodLevel as String
+				upgradeBloodCosts = (upgradeBloodCosts * upgradeCostsFactor) as int
+				$UpgradeBloodText.text = "$"+upgradeBloodCosts as String
+		if Input.is_action_pressed("2"):
+			if $UpgradeMask.animation == "Available":
+				$Player.maskSpeed = $Player.maskSpeed + upgradeSpeedBy
+				$Player.updateAnimationSpeeds()
+				$UpgradeMask.play("Upgrade")
+				$Player.money = $Player.money - upgradeMaskCosts
+				maskLevel = maskLevel + 1
+				$LevelMaskText.text = maskLevel as String
+				upgradeMaskCosts = (upgradeMaskCosts * upgradeCostsFactor) as int
+				$UpgradeMaskText.text = "$"+upgradeMaskCosts as String
+		if Input.is_action_pressed("3"):
+			if $UpgradePill.animation == "Available":
+				$Player.pillSpeed = $Player.pillSpeed + upgradeSpeedBy
+				$Player.updateAnimationSpeeds()
+				$UpgradePill.play("Upgrade")
+				$Player.money = $Player.money - upgradePillCosts
+				pillLevel = pillLevel + 1
+				$LevelPillText.text = pillLevel as String
+				upgradePillCosts = (upgradePillCosts * upgradeCostsFactor) as int
+				$UpgradePillText.text = "$"+upgradePillCosts as String
+		if Input.is_action_pressed("4"):
+			if $UpgradeTest.animation == "Available":
+				$Player.testSpeed = $Player.testSpeed + upgradeSpeedBy
+				$Player.updateAnimationSpeeds()
+				$UpgradeTest.play("Upgrade")
+				$Player.money = $Player.money - upgradeTestCosts
+				testLevel = testLevel + 1
+				$LevelTestText.text = testLevel as String
+				upgradeTestCosts = (upgradeTestCosts * upgradeCostsFactor) as int
+				$UpgradeTestText.text = "$"+upgradeTestCosts as String
+		if Input.is_action_pressed("5"):
+			if $UpgradeVaccine.animation == "Available":
+				$Player.vaccineSpeed = $Player.vaccineSpeed + upgradeSpeedBy
+				$Player.updateAnimationSpeeds()
+				$UpgradeVaccine.play("Upgrade")
+				$Player.money = $Player.money - upgradeMaskCosts
+				vaccineLevel = vaccineLevel + 1
+				$LevelVaccineText.text = vaccineLevel as String
+				upgradeVaccineCosts = (upgradeVaccineCosts * upgradeCostsFactor) as int
+				$UpgradeVaccineText.text = "$"+upgradeVaccineCosts as String
+		if Input.is_action_pressed("6"):
+			if $BuyLife.animation == "Available":
+				$Player.lifes = $Player.lifes + 1
+				$BuyLife.play("Buy")
+				$Player.money = $Player.money - buyLifeCosts
+				buyLifeCosts = (buyLifeCosts * upgradeCostsFactor) as int
+				$BuyLifeText.text = "$"+buyLifeCosts as String
+	
+	if Input.is_action_pressed("Space"):
+		if pauseCoolDown > 0:
+			return null
+		pauseCoolDown = 20
+		gamePaused = !gamePaused
+		if gamePaused == true:
+			$EnemyTimer.paused = true
+			$RoundTimer.paused = true
+			for i in enemies.size():
+				enemies[i].linear_velocity = Vector2(0,0)
+				enemies[i].setIdle()
+		else:
+			$EnemyTimer.paused = false
+			$RoundTimer.paused = false
+			for i in enemies.size():
+				enemies[i].linear_velocity = Vector2(-enemies[i].speed,0)
+				enemies[i].setPlay()
+	
+	pauseCoolDown = pauseCoolDown - 1
+
 func checkEnemyTreated():
 	if enemies.size() != 0:
 		for i in enemies.size():
@@ -307,7 +330,7 @@ func updateUpgradeIcons():
 				$UpgradeTest.play("Unavailable")
 			$UpgradeTestText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
 	#Buy Life
-	if $Player.lifes < 3:
+	if $Player.lifes < 5:
 		if $Player.money >= buyLifeCosts:
 			if $BuyLife.animation == "Unavailable":
 				$BuyLife.play("Available")

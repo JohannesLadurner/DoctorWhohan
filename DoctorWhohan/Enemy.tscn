@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://patientAnimation/ManMaskWalk/MManWalkOrange0.png" type="Texture" id=1]
 [ext_resource path="res://Enemy.gd" type="Script" id=2]
@@ -53,103 +53,191 @@
 [ext_resource path="res://patientAnimation/ManMaskWalk/MManWalkGreen0.png" type="Texture" id=51]
 [ext_resource path="res://patientAnimation/ManWalk/ManWalkRed0.png" type="Texture" id=52]
 [ext_resource path="res://patientAnimation/ManMaskWalk/MManWalkGreen1.png" type="Texture" id=53]
+[ext_resource path="res://patientAnimation/ManIdle/ManIdleBlue0.png" type="Texture" id=54]
+[ext_resource path="res://patientAnimation/ManIdle/ManIdleOrange0.png" type="Texture" id=55]
+[ext_resource path="res://patientAnimation/ManIdle/ManIdleGreen1.png" type="Texture" id=56]
+[ext_resource path="res://patientAnimation/ManIdle/ManIdleOrange1.png" type="Texture" id=57]
+[ext_resource path="res://patientAnimation/ManMaskIdle/MManIdleBlue1.png" type="Texture" id=58]
+[ext_resource path="res://patientAnimation/ManIdle/ManIdleBlue1.png" type="Texture" id=59]
+[ext_resource path="res://patientAnimation/ManIdle/ManIdleGreen0.png" type="Texture" id=60]
+[ext_resource path="res://patientAnimation/ManIdle/ManIdleRed0.png" type="Texture" id=61]
+[ext_resource path="res://patientAnimation/ManIdle/ManIdleRed1.png" type="Texture" id=62]
+[ext_resource path="res://patientAnimation/ManMaskIdle/MManIdleBlue0.png" type="Texture" id=63]
+[ext_resource path="res://patientAnimation/WomanIdle/WomanIdlePink0.png" type="Texture" id=64]
+[ext_resource path="res://patientAnimation/WomanMaskIdle/MWomanIdlePink0.png" type="Texture" id=65]
+[ext_resource path="res://patientAnimation/ManMaskIdle/MManIdleGreen1.png" type="Texture" id=66]
+[ext_resource path="res://patientAnimation/WomanMaskIdle/MWomanIdleRed1.png" type="Texture" id=67]
+[ext_resource path="res://patientAnimation/WomanMaskIdle/MWomanIdlePink1.png" type="Texture" id=68]
+[ext_resource path="res://patientAnimation/WomanMaskIdle/MWomanIdlePurple0.png" type="Texture" id=69]
+[ext_resource path="res://patientAnimation/ManMaskIdle/MManIdleOrange0.png" type="Texture" id=70]
+[ext_resource path="res://patientAnimation/ManMaskIdle/MManIdleRed1.png" type="Texture" id=71]
+[ext_resource path="res://patientAnimation/ManMaskIdle/MManIdleRed0.png" type="Texture" id=72]
+[ext_resource path="res://patientAnimation/WomanIdle/WomanIdlePink1.png" type="Texture" id=73]
+[ext_resource path="res://patientAnimation/WomanMaskIdle/MWomanIdlePurple1.png" type="Texture" id=74]
+[ext_resource path="res://patientAnimation/ManMaskIdle/MManIdleGreen0.png" type="Texture" id=75]
+[ext_resource path="res://patientAnimation/ManMaskIdle/MManIdleOrange1.png" type="Texture" id=76]
+[ext_resource path="res://patientAnimation/WomanIdle/WomanIdleRed0.png" type="Texture" id=77]
+[ext_resource path="res://patientAnimation/WomanIdle/WomanIdleRed1.png" type="Texture" id=78]
+[ext_resource path="res://patientAnimation/WomanIdle/WomanIdlePurple1.png" type="Texture" id=79]
+[ext_resource path="res://patientAnimation/WomanIdle/WomanIdlePurple0.png" type="Texture" id=80]
+[ext_resource path="res://patientAnimation/WomanMaskIdle/MWomanIdleRed0.png" type="Texture" id=81]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 38.554, 79.7913 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 36 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "MaskManWalkRed",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 33 ) ],
-"loop": true,
-"name": "ManWalkOrange",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "WomanWalkRed",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 46 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "WomanWalkPurple",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 44 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "ManWalkGreen",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ), ExtResource( 35 ) ],
-"loop": true,
-"name": "ManWalkBlue",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 51 ), ExtResource( 53 ) ],
-"loop": true,
-"name": "MaskManWalkGreen",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 52 ), ExtResource( 50 ) ],
 "loop": true,
-"name": "ManWalkRed",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 37 ), ExtResource( 45 ) ],
-"loop": true,
-"name": "WomanWalkPink",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "MaskManWalkOrange",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 43 ), ExtResource( 38 ) ],
-"loop": true,
-"name": "MaskWomanWalkPink",
+"name": "ManRed",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 34 ), ExtResource( 40 ) ],
 "loop": true,
-"name": "MaskManWalkBlue",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 49 ), ExtResource( 48 ) ],
-"loop": true,
-"name": "MaskWomanWalkPurple",
+"name": "MaskManBlue",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "MaskWomanWalkRed",
+"name": "MaskWomanRed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 77 ), ExtResource( 78 ) ],
+"loop": true,
+"name": "WomanRedIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 72 ), ExtResource( 71 ) ],
+"loop": true,
+"name": "MaskManRedIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 69 ), ExtResource( 74 ) ],
+"loop": true,
+"name": "MaskWomanPurpleIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 75 ), ExtResource( 66 ) ],
+"loop": true,
+"name": "MaskManGreenIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 70 ), ExtResource( 76 ) ],
+"loop": true,
+"name": "MaskManOrangeIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 68 ) ],
+"loop": true,
+"name": "MaskWomanPinkIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "ManBlueIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "ManOrangeIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "ManGreenIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 63 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "MaskManBlueIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 62 ) ],
+"loop": true,
+"name": "ManRedIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 80 ), ExtResource( 79 ) ],
+"loop": true,
+"name": "WomanPurpleIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 73 ) ],
+"loop": true,
+"name": "WomanPinkIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 67 ) ],
+"loop": true,
+"name": "MaskWomanRedIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "WomanRed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "MaskWomanPink",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "MaskManGreen",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "MaskManRed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 49 ), ExtResource( 48 ) ],
+"loop": true,
+"name": "MaskWomanPurple",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "ManOrange",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "WomanPink",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "MaskManOrange",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "ManGreen",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "WomanPurple",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "ManBlue",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "Empty",
-"speed": 4.0
-}, {
 "frames": [ ExtResource( 19 ), ExtResource( 17 ), ExtResource( 32 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "Mask",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "Pill",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "Test",
+"name": "Vaccine",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 27 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 30 ) ],
@@ -157,9 +245,19 @@ animations = [ {
 "name": "Blood",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "Vaccine",
+"name": "Test",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Pill",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "Empty",
 "speed": 4.0
 } ]
 
@@ -177,7 +275,7 @@ shape = SubResource( 1 )
 position = Vector2( -1.31622, -68.3957 )
 scale = Vector2( 1.00781, 0.992187 )
 frames = SubResource( 2 )
-animation = "MaskManWalkGreen"
+animation = "MaskWomanRedIdle"
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 show_behind_parent = true
