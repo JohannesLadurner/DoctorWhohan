@@ -1731,10 +1731,9 @@ __meta__ = {
 }
 
 [node name="BuyLife" type="AnimatedSprite" parent="."]
-position = Vector2( 1230, 55 )
-scale = Vector2( 0.797783, 0.803802 )
+position = Vector2( 1227.88, 55.1784 )
 frames = SubResource( 23 )
-animation = "Buy"
+animation = "Available"
 
 [node name="BuyLifeText" type="Label" parent="."]
 margin_left = 1186.0
