@@ -5,7 +5,9 @@ export (PackedScene) var Enemy
 var score #Punktestand
 var start = false
 var gamePaused = false
-var pauseCoolDown = 0
+var inputCoolDownCounter = 0
+var inputCoolDown = 20
+var disappearingNeeds = false
 
 ########NEEDS#########
 enum needType{
@@ -52,12 +54,13 @@ func _process(delta):
 	if start == true:
 		checkPlayerInput()
 		checkLife()
-		checkEnemyTreated()
+		checkEnemies()
 		updateUpgradeIcons()
 		updateMoney()
 		if newRoundBeginning == true && enemies.size() == 0: #Start new round when all enemies are gone
 			initNewRound()
 			newRoundBeginning = false
+			
 
 
 func _on_EnemyTimer_timeout():
@@ -140,18 +143,23 @@ func _on_Player_exit():
 
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkPlayerInput():
-	if !gamePaused:
+	if !gamePaused && inputCoolDownCounter == 0:
 		if $Player.isIdleing() == true:
 			if Input.is_action_pressed("q") && $Player.unlockedNeeds.find("Blood") > -1:
 				$Player.playBloodAnim()
+				inputCoolDownCounter = inputCoolDown
 			if Input.is_action_pressed("w") && $Player.unlockedNeeds.find("Mask") > -1:
 				$Player.playMaskAnim()
+				inputCoolDownCounter = inputCoolDown
 			if Input.is_action_pressed("e") && $Player.unlockedNeeds.find("Pill") > -1:
 				$Player.playPillAnim()
+				inputCoolDownCounter = inputCoolDown
 			if Input.is_action_pressed("r") && $Player.unlockedNeeds.find("Test") > -1:
 				$Player.playTestAnim()
+				inputCoolDownCounter = inputCoolDown
 			if Input.is_action_pressed("t") && $Player.unlockedNeeds.find("Vaccine") > -1:
 				$Player.playVaccineAnim()
+				inputCoolDownCounter = inputCoolDown
 			
 		if Input.is_action_pressed("1"):
 			if $UpgradeBlood.animation == "Available":
@@ -163,6 +171,7 @@ func checkPlayerInput():
 				$LevelBloodText.text = bloodLevel as String
 				upgradeBloodCosts = (upgradeBloodCosts * upgradeCostsFactor) as int
 				$UpgradeBloodText.text = "$"+upgradeBloodCosts as String
+				inputCoolDownCounter = inputCoolDown
 		if Input.is_action_pressed("2"):
 			if $UpgradeMask.animation == "Available":
 				$Player.maskSpeed = $Player.maskSpeed + upgradeSpeedBy
@@ -173,6 +182,7 @@ func checkPlayerInput():
 				$LevelMaskText.text = maskLevel as String
 				upgradeMaskCosts = (upgradeMaskCosts * upgradeCostsFactor) as int
 				$UpgradeMaskText.text = "$"+upgradeMaskCosts as String
+				inputCoolDownCounter = inputCoolDown
 		if Input.is_action_pressed("3"):
 			if $UpgradePill.animation == "Available":
 				$Player.pillSpeed = $Player.pillSpeed + upgradeSpeedBy
@@ -183,6 +193,7 @@ func checkPlayerInput():
 				$LevelPillText.text = pillLevel as String
 				upgradePillCosts = (upgradePillCosts * upgradeCostsFactor) as int
 				$UpgradePillText.text = "$"+upgradePillCosts as String
+				inputCoolDownCounter = inputCoolDown
 		if Input.is_action_pressed("4"):
 			if $UpgradeTest.animation == "Available":
 				$Player.testSpeed = $Player.testSpeed + upgradeSpeedBy
@@ -193,6 +204,7 @@ func checkPlayerInput():
 				$LevelTestText.text = testLevel as String
 				upgradeTestCosts = (upgradeTestCosts * upgradeCostsFactor) as int
 				$UpgradeTestText.text = "$"+upgradeTestCosts as String
+				inputCoolDownCounter = inputCoolDown
 		if Input.is_action_pressed("5"):
 			if $UpgradeVaccine.animation == "Available":
 				$Player.vaccineSpeed = $Player.vaccineSpeed + upgradeSpeedBy
@@ -203,6 +215,7 @@ func checkPlayerInput():
 				$LevelVaccineText.text = vaccineLevel as String
 				upgradeVaccineCosts = (upgradeVaccineCosts * upgradeCostsFactor) as int
 				$UpgradeVaccineText.text = "$"+upgradeVaccineCosts as String
+				inputCoolDownCounter = inputCoolDown
 		if Input.is_action_pressed("6"):
 			if $BuyLife.animation == "Available":
 				$Player.lifes = $Player.lifes + 1
@@ -210,11 +223,12 @@ func checkPlayerInput():
 				$Player.money = $Player.money - buyLifeCosts
 				buyLifeCosts = (buyLifeCosts * upgradeCostsFactor) as int
 				$BuyLifeText.text = "$"+buyLifeCosts as String
+				inputCoolDownCounter = inputCoolDown
 	
 	if Input.is_action_pressed("Space"):
-		if pauseCoolDown > 0:
+		if inputCoolDown > 0 || disappearingNeeds:
 			return null
-		pauseCoolDown = 20
+		inputCoolDown = 20
 		gamePaused = !gamePaused
 		if gamePaused == true:
 			$EnemyTimer.paused = true
@@ -230,12 +244,15 @@ func checkPlayerInput():
 			for i in enemies.size():
 				enemies[i].linear_velocity = Vector2(-enemies[i].speed,0)
 				enemies[i].setPlay()
-	
-	pauseCoolDown = pauseCoolDown - 1
+	if inputCoolDownCounter > 0:
+		inputCoolDownCounter = inputCoolDownCounter - 1
 
-func checkEnemyTreated():
+func checkEnemies():
+	
 	if enemies.size() != 0:
 		for i in enemies.size():
+			if disappearingNeeds && enemies[i].position.x < 700 && !enemies[i].needIsHidden:
+				enemies[i].hideNeed()
 			if enemies[i].isInside == true && enemies[i].gotTreated == false && enemies[i].needName == $Player/AnimatedSprite.animation:
 				enemies[i].gotTreated = true
 				if enemies[i].needName == "Mask":
@@ -294,7 +311,7 @@ func updateUpgradeIcons():
 	#Update Pill
 	if $UpgradePill.animation != "Locked":
 		if $Player.money >= upgradePillCosts:
-			if  $UpgradePill.animation == "Unavailable":
+			if $UpgradePill.animation == "Unavailable":
 				$UpgradePill.play("Available")
 			$UpgradePillText.add_color_override("font_color", Color(0, 1, 0, 1)) #Green
 		if $Player.money < upgradePillCosts:
@@ -342,9 +359,8 @@ func updateUpgradeIcons():
 				$BuyLife.play("Unavailable")
 			$BuyLifeText.add_color_override("font_color", Color(1, 0, 0, 1)) #Red
 	else:
-		if $BuyLife.animation == "Available":
-			$BuyLife.play("Unavailable")
-			$BuyLifeText.add_color_override("font_color", Color8(100, 100, 100, 255)) #Red
+		$BuyLife.play("Unavailable")
+		$BuyLifeText.add_color_override("font_color", Color8(100, 100, 100, 255)) #Red
 			
 	
 #############################################
@@ -354,9 +370,10 @@ func updateUpgradeIcons():
 func initNewRound():
 	roundNr = roundNr + 1
 	playRoundAnimation(roundNr, false)
+	disappearingNeeds = false
 	if roundNr == 1: #first round begin with a need
 		var effectName = addRandomNeed()
-		$EffectDescription.text = "New Effect: " + effectName
+		$EffectDescription.text = "New Need: " + effectName
 	else:
 		addNewRandomEffect()
 	$EffectDescription.show()
@@ -378,12 +395,11 @@ func playRoundAnimation(roundNumber, reverse):
 func addNewRandomEffect():
 	var effectChosen = false
 	while effectChosen == false:
-		var randomEffect = randi() % 3
-		print(randomEffect)
+		var randomEffect = randi() % 4
 		if randomEffect == 0: #Add a new need
 			var effectName = addRandomNeed()
 			if effectName != null:
-				$EffectDescription.text = "New Effect: " + effectName
+				$EffectDescription.text = "New Need: " + effectName
 				effectChosen = true
 		if randomEffect == 1: #Increase the speed of the patients
 			enemyBaseSpeed = enemyBaseSpeed + 10
@@ -394,6 +410,10 @@ func addNewRandomEffect():
 				$EnemyTimer.wait_time = $EnemyTimer.wait_time - 0.1
 				$EffectDescription.text = "Patients Spawn Time Decreased"
 				effectChosen = true
+		if randomEffect == 3:
+			$EffectDescription.text = "Disappearing Needs. No Pausing!"
+			disappearingNeeds = true
+			effectChosen = true
 
 
 func _on_RoundTimer_timeout():
@@ -422,33 +442,33 @@ func _on_RoundTitle_animation_finished():
 
 func _on_UpgradeBlood_animation_finished():
 	if $UpgradeBlood.animation == "Upgrade":
-		$UpgradeBlood.play("Available")
+		$UpgradeBlood.play("Unavailable")
 	pass
 
 func _on_UpgradeMask_animation_finished():
 	if $UpgradeMask.animation == "Upgrade":
-		$UpgradeMask.play("Available")
+		$UpgradeMask.play("Unavailable")
 	pass
 	
 
 func _on_UpgradePill_animation_finished():
 	if $UpgradePill.animation == "Upgrade":
-		$UpgradePill.play("Available")
+		$UpgradePill.play("Unavailable")
 	pass
 
 func _on_UpgradeTest_animation_finished():
 	if $UpgradeTest.animation == "Upgrade":
-		$UpgradeTest.play("Available")
+		$UpgradeTest.play("Unavailable")
 	pass
 
 func _on_UpgradeVaccine_animation_finished():
 	if $UpgradeVaccine.animation == "Upgrade":
-		$UpgradeVaccine.play("Available")
+		$UpgradeVaccine.play("Unavailable")
 	pass
 
 func _on_BuyLife_animation_finished():
 	if $BuyLife.animation == "Buy":
-		$BuyLife.play("Available")
+		$BuyLife.play("Unavailable")
 	pass
 	
 #############################################

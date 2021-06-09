@@ -5,6 +5,7 @@ export var min_speed = 150  # min speed
 export var max_speed = 250  # max speed
 var gotTreated = false
 var needName
+var needIsHidden = false
 var isInside = false
 var speed = 100
 
@@ -44,6 +45,10 @@ func setPlay():
 	playAnimation = playAnimation.substr(0,playAnimation.length() - 4)
 	print(playAnimation)
 	$AnimatedSprite.play(playAnimation)
+
+func hideNeed():
+	$Need.play("Empty")
+	needIsHidden = true
 
 # Wenn Bildschirm verlassen wird
 func _on_VisibilityNotifier2D_screen_exited():

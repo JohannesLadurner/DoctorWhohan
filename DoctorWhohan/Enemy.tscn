@@ -87,44 +87,14 @@ extents = Vector2( 38.554, 79.7913 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 52 ), ExtResource( 50 ) ],
-"loop": true,
-"name": "ManRed",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 34 ), ExtResource( 40 ) ],
 "loop": true,
 "name": "MaskManBlue",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "MaskWomanRed",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 77 ), ExtResource( 78 ) ],
 "loop": true,
 "name": "WomanRedIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 72 ), ExtResource( 71 ) ],
-"loop": true,
-"name": "MaskManRedIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 69 ), ExtResource( 74 ) ],
-"loop": true,
-"name": "MaskWomanPurpleIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 75 ), ExtResource( 66 ) ],
-"loop": true,
-"name": "MaskManGreenIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 70 ), ExtResource( 76 ) ],
-"loop": true,
-"name": "MaskManOrangeIdle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 65 ), ExtResource( 68 ) ],
@@ -135,11 +105,6 @@ animations = [ {
 "frames": [ ExtResource( 54 ), ExtResource( 59 ) ],
 "loop": true,
 "name": "ManBlueIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 55 ), ExtResource( 57 ) ],
-"loop": true,
-"name": "ManOrangeIdle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 60 ), ExtResource( 56 ) ],
@@ -157,19 +122,9 @@ animations = [ {
 "name": "ManRedIdle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 80 ), ExtResource( 79 ) ],
-"loop": true,
-"name": "WomanPurpleIdle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 64 ), ExtResource( 73 ) ],
 "loop": true,
 "name": "WomanPinkIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 81 ), ExtResource( 67 ) ],
-"loop": true,
-"name": "MaskWomanRedIdle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 9 ) ],
@@ -182,6 +137,11 @@ animations = [ {
 "name": "MaskWomanPink",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 80 ), ExtResource( 79 ) ],
+"loop": true,
+"name": "WomanPurpleIdle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 51 ), ExtResource( 53 ) ],
 "loop": true,
 "name": "MaskManGreen",
@@ -192,14 +152,59 @@ animations = [ {
 "name": "MaskManRed",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 23 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "MaskWomanRed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "ManOrangeIdle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 49 ), ExtResource( 48 ) ],
 "loop": true,
 "name": "MaskWomanPurple",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 33 ) ],
+"frames": [ ExtResource( 69 ), ExtResource( 74 ) ],
 "loop": true,
-"name": "ManOrange",
+"name": "MaskWomanPurpleIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 75 ), ExtResource( 66 ) ],
+"loop": true,
+"name": "MaskManGreenIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 70 ), ExtResource( 76 ) ],
+"loop": true,
+"name": "MaskManOrangeIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 72 ), ExtResource( 71 ) ],
+"loop": true,
+"name": "MaskManRedIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 67 ) ],
+"loop": true,
+"name": "MaskWomanRedIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "WomanPurple",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "ManGreen",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "ManBlue",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 37 ), ExtResource( 45 ) ],
@@ -212,19 +217,14 @@ animations = [ {
 "name": "MaskManOrange",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 44 ), ExtResource( 39 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 33 ) ],
 "loop": true,
-"name": "ManGreen",
+"name": "ManOrange",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 46 ), ExtResource( 42 ) ],
+"frames": [ ExtResource( 52 ), ExtResource( 50 ) ],
 "loop": true,
-"name": "WomanPurple",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 47 ), ExtResource( 35 ) ],
-"loop": true,
-"name": "ManBlue",
+"name": "ManRed",
 "speed": 5.0
 } ]
 
@@ -235,9 +235,9 @@ animations = [ {
 "name": "Mask",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "Vaccine",
+"name": "Pill",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 27 ), ExtResource( 31 ), ExtResource( 26 ), ExtResource( 30 ) ],
@@ -245,14 +245,14 @@ animations = [ {
 "name": "Blood",
 "speed": 4.0
 }, {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Vaccine",
+"speed": 4.0
+}, {
 "frames": [ ExtResource( 13 ), ExtResource( 18 ), ExtResource( 28 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "Test",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 16 ), ExtResource( 25 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "Pill",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 10 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 29 ) ],
