@@ -219,12 +219,14 @@ func checkPlayerInput():
 		if gamePaused == true:
 			$EnemyTimer.paused = true
 			$RoundTimer.paused = true
+			$Paused.show()
 			for i in enemies.size():
 				enemies[i].linear_velocity = Vector2(0,0)
 				enemies[i].setIdle()
 		else:
 			$EnemyTimer.paused = false
 			$RoundTimer.paused = false
+			$Paused.hide()
 			for i in enemies.size():
 				enemies[i].linear_velocity = Vector2(-enemies[i].speed,0)
 				enemies[i].setPlay()
@@ -502,6 +504,7 @@ func hideStart():
 	$LevelTestText.hide()
 	$LevelVaccineText.hide()
 	$Score.hide()
+	$Paused.hide()
 	
 	
 #show all things
