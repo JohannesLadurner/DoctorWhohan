@@ -8,11 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
 [application]
 
 config/name="DoctorWhohan"
 run/main_scene="res://scenes/Game.tscn"
-config/icon="res://icon.png"
+config/icon="res://playerAnimation/DoctorIdle/DoctorIdle0.png"
 
 [display]
 
