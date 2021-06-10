@@ -5,6 +5,7 @@ export (PackedScene) var Enemy
 var score #Punktestand
 var start = false
 var gamePaused = false
+var gameOver = false
 var inputCoolDownCounter = 0
 var inputCoolDown = 20
 var disappearingNeeds = false
@@ -60,7 +61,8 @@ func _process(delta):
 		if newRoundBeginning == true && enemies.size() == 0: #Start new round when all enemies are gone
 			initNewRound()
 			newRoundBeginning = false
-			
+		if gameOver:
+			$RoundTimer.paused = true
 
 
 func _on_EnemyTimer_timeout():
@@ -127,7 +129,8 @@ func checkLife():
 		$LifeThree.hide()
 		$LifeFour.hide()
 		$LifeFive.hide()
-		gameOver()
+		gameOver = true
+		$gameOver.show()
 
 
 #Wird aufgerufen, wenn der Player verlassen wird
@@ -143,7 +146,7 @@ func _on_Player_exit():
 
 #Überprüft ob etwas beim Player ist und ob der richtige Button gedrückt wurde
 func checkPlayerInput():
-	if !gamePaused && inputCoolDownCounter == 0:
+	if !gamePaused && !gameOver && inputCoolDownCounter == 0:
 		if $Player.isIdleing() == true:
 			if Input.is_action_pressed("q") && $Player.unlockedNeeds.find("Blood") > -1:
 				$Player.playBloodAnim()
@@ -226,6 +229,8 @@ func checkPlayerInput():
 				inputCoolDownCounter = inputCoolDown
 	
 	if Input.is_action_pressed("Space"):
+		if gameOver:
+			gameOver()
 		if inputCoolDownCounter > 0 || disappearingNeeds:
 			return null
 		inputCoolDownCounter = 20
@@ -527,6 +532,7 @@ func hideStart():
 	$LevelVaccineText.hide()
 	$Score.hide()
 	$Paused.hide()
+	$gameOver.hide()
 	
 	
 #show all things
