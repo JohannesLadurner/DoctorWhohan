@@ -415,7 +415,7 @@ func addNewRandomEffect():
 				$EnemyTimer.wait_time = $EnemyTimer.wait_time - 0.1
 				$EffectDescription.text = "Patients Spawn Time Decreased"
 				effectChosen = true
-		if randomEffect == 3:
+		if randomEffect == 3 && $Player.unlockedNeeds.size() > 1:
 			$EffectDescription.text = "Disappearing Needs. No Pausing!"
 			disappearingNeeds = true
 			effectChosen = true

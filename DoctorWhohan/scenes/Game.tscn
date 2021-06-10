@@ -1167,11 +1167,6 @@ animations = [ {
 "name": "5",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 230 ), ExtResource( 238 ), ExtResource( 281 ), ExtResource( 282 ), ExtResource( 289 ), ExtResource( 271 ), ExtResource( 243 ), ExtResource( 242 ), ExtResource( 234 ), ExtResource( 264 ), ExtResource( 237 ), ExtResource( 244 ), ExtResource( 280 ), ExtResource( 245 ), ExtResource( 265 ), ExtResource( 268 ), ExtResource( 288 ), ExtResource( 236 ), ExtResource( 283 ), ExtResource( 270 ), ExtResource( 257 ), ExtResource( 285 ), ExtResource( 263 ), ExtResource( 284 ), ExtResource( 250 ), ExtResource( 272 ), ExtResource( 266 ), ExtResource( 254 ), ExtResource( 231 ), ExtResource( 275 ), ExtResource( 286 ), ExtResource( 273 ), ExtResource( 274 ), ExtResource( 240 ), ExtResource( 251 ), ExtResource( 276 ), ExtResource( 258 ), ExtResource( 248 ), ExtResource( 232 ), ExtResource( 287 ), ExtResource( 252 ), ExtResource( 259 ), ExtResource( 269 ), ExtResource( 235 ), ExtResource( 277 ), ExtResource( 267 ), ExtResource( 249 ), ExtResource( 290 ), ExtResource( 253 ), ExtResource( 246 ) ],
-"loop": false,
-"name": "4",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 193 ), ExtResource( 221 ), ExtResource( 196 ), ExtResource( 163 ), ExtResource( 185 ), ExtResource( 164 ), ExtResource( 167 ), ExtResource( 168 ), ExtResource( 176 ), ExtResource( 187 ), ExtResource( 169 ), ExtResource( 170 ), ExtResource( 171 ), ExtResource( 188 ), ExtResource( 189 ), ExtResource( 190 ), ExtResource( 191 ), ExtResource( 192 ), ExtResource( 228 ), ExtResource( 226 ), ExtResource( 223 ), ExtResource( 227 ), ExtResource( 224 ), ExtResource( 225 ), ExtResource( 530 ), ExtResource( 518 ), ExtResource( 488 ), ExtResource( 500 ), ExtResource( 505 ), ExtResource( 491 ), ExtResource( 531 ), ExtResource( 489 ), ExtResource( 521 ), ExtResource( 490 ), ExtResource( 538 ), ExtResource( 543 ), ExtResource( 541 ), ExtResource( 532 ), ExtResource( 522 ), ExtResource( 525 ), ExtResource( 528 ), ExtResource( 533 ), ExtResource( 506 ), ExtResource( 507 ), ExtResource( 508 ), ExtResource( 540 ), ExtResource( 517 ), ExtResource( 539 ), ExtResource( 535 ), ExtResource( 502 ) ],
 "loop": false,
 "name": "2",
@@ -1180,11 +1175,6 @@ animations = [ {
 "frames": [ ExtResource( 729 ), ExtResource( 747 ), ExtResource( 751 ), ExtResource( 731 ), ExtResource( 732 ), ExtResource( 783 ), ExtResource( 740 ), ExtResource( 733 ), ExtResource( 755 ), ExtResource( 760 ), ExtResource( 734 ), ExtResource( 771 ), ExtResource( 763 ), ExtResource( 738 ), ExtResource( 739 ), ExtResource( 741 ), ExtResource( 753 ), ExtResource( 748 ), ExtResource( 724 ), ExtResource( 725 ), ExtResource( 781 ), ExtResource( 742 ), ExtResource( 743 ), ExtResource( 754 ), ExtResource( 768 ), ExtResource( 764 ), ExtResource( 744 ), ExtResource( 769 ), ExtResource( 766 ), ExtResource( 770 ), ExtResource( 749 ), ExtResource( 785 ), ExtResource( 746 ), ExtResource( 745 ), ExtResource( 772 ), ExtResource( 787 ), ExtResource( 750 ), ExtResource( 773 ), ExtResource( 774 ), ExtResource( 775 ), ExtResource( 758 ), ExtResource( 776 ), ExtResource( 777 ), ExtResource( 778 ), ExtResource( 786 ), ExtResource( 784 ), ExtResource( 779 ), ExtResource( 780 ), ExtResource( 636 ), ExtResource( 635 ) ],
 "loop": false,
 "name": "8",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 478 ), ExtResource( 474 ), ExtResource( 477 ), ExtResource( 479 ), ExtResource( 480 ), ExtResource( 316 ), ExtResource( 322 ), ExtResource( 308 ), ExtResource( 305 ), ExtResource( 319 ), ExtResource( 326 ), ExtResource( 314 ), ExtResource( 339 ), ExtResource( 301 ), ExtResource( 329 ), ExtResource( 311 ), ExtResource( 328 ), ExtResource( 306 ), ExtResource( 323 ), ExtResource( 309 ), ExtResource( 300 ), ExtResource( 333 ), ExtResource( 324 ), ExtResource( 325 ), ExtResource( 303 ), ExtResource( 340 ), ExtResource( 327 ), ExtResource( 302 ), ExtResource( 332 ), ExtResource( 313 ), ExtResource( 307 ), ExtResource( 320 ), ExtResource( 304 ), ExtResource( 317 ), ExtResource( 330 ), ExtResource( 331 ), ExtResource( 334 ), ExtResource( 335 ), ExtResource( 312 ), ExtResource( 341 ), ExtResource( 336 ), ExtResource( 315 ), ExtResource( 337 ), ExtResource( 321 ), ExtResource( 338 ), ExtResource( 310 ), ExtResource( 318 ), ExtResource( 342 ), ExtResource( 343 ), ExtResource( 344 ) ],
-"loop": false,
-"name": "9",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 493 ), ExtResource( 548 ), ExtResource( 529 ), ExtResource( 546 ), ExtResource( 492 ), ExtResource( 519 ), ExtResource( 534 ), ExtResource( 520 ), ExtResource( 536 ), ExtResource( 537 ), ExtResource( 542 ), ExtResource( 494 ), ExtResource( 501 ), ExtResource( 523 ), ExtResource( 509 ), ExtResource( 495 ), ExtResource( 503 ), ExtResource( 510 ), ExtResource( 524 ), ExtResource( 526 ), ExtResource( 527 ), ExtResource( 544 ), ExtResource( 516 ), ExtResource( 545 ), ExtResource( 547 ), ExtResource( 549 ), ExtResource( 513 ), ExtResource( 514 ), ExtResource( 486 ), ExtResource( 511 ), ExtResource( 487 ), ExtResource( 496 ), ExtResource( 504 ), ExtResource( 512 ), ExtResource( 497 ), ExtResource( 498 ), ExtResource( 499 ), ExtResource( 515 ), ExtResource( 552 ), ExtResource( 553 ), ExtResource( 551 ), ExtResource( 554 ), ExtResource( 555 ), ExtResource( 550 ), ExtResource( 239 ), ExtResource( 247 ), ExtResource( 293 ), ExtResource( 241 ), ExtResource( 260 ), ExtResource( 262 ) ],
@@ -1211,6 +1201,16 @@ animations = [ {
 "loop": false,
 "name": "0",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 478 ), ExtResource( 474 ), ExtResource( 477 ), ExtResource( 479 ), ExtResource( 480 ), ExtResource( 316 ), ExtResource( 322 ), ExtResource( 308 ), ExtResource( 305 ), ExtResource( 319 ), ExtResource( 326 ), ExtResource( 314 ), ExtResource( 339 ), ExtResource( 301 ), ExtResource( 329 ), ExtResource( 311 ), ExtResource( 328 ), ExtResource( 306 ), ExtResource( 323 ), ExtResource( 309 ), ExtResource( 300 ), ExtResource( 333 ), ExtResource( 324 ), ExtResource( 325 ), ExtResource( 303 ), ExtResource( 340 ), ExtResource( 327 ), ExtResource( 302 ), ExtResource( 332 ), ExtResource( 313 ), ExtResource( 307 ), ExtResource( 320 ), ExtResource( 304 ), ExtResource( 317 ), ExtResource( 330 ), ExtResource( 331 ), ExtResource( 334 ), ExtResource( 335 ), ExtResource( 312 ), ExtResource( 341 ), ExtResource( 336 ), ExtResource( 315 ), ExtResource( 337 ), ExtResource( 321 ), ExtResource( 338 ), ExtResource( 310 ), ExtResource( 318 ), ExtResource( 342 ), ExtResource( 343 ), ExtResource( 344 ) ],
+"loop": false,
+"name": "9",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 230 ), ExtResource( 238 ), ExtResource( 281 ), ExtResource( 282 ), ExtResource( 289 ), ExtResource( 271 ), ExtResource( 243 ), ExtResource( 242 ), ExtResource( 234 ), ExtResource( 264 ), ExtResource( 237 ), ExtResource( 244 ), ExtResource( 280 ), ExtResource( 245 ), ExtResource( 265 ), ExtResource( 268 ), ExtResource( 288 ), ExtResource( 236 ), ExtResource( 283 ), ExtResource( 270 ), ExtResource( 257 ), ExtResource( 285 ), ExtResource( 263 ), ExtResource( 284 ), ExtResource( 250 ), ExtResource( 272 ), ExtResource( 266 ), ExtResource( 254 ), ExtResource( 231 ), ExtResource( 275 ), ExtResource( 286 ), ExtResource( 273 ), ExtResource( 274 ), ExtResource( 240 ), ExtResource( 251 ), ExtResource( 276 ), ExtResource( 258 ), ExtResource( 248 ), ExtResource( 232 ), ExtResource( 287 ), ExtResource( 252 ), ExtResource( 259 ), ExtResource( 269 ), ExtResource( 235 ), ExtResource( 277 ), ExtResource( 267 ), ExtResource( 249 ), ExtResource( 290 ), ExtResource( 253 ), ExtResource( 246 ) ],
+"loop": false,
+"name": "4",
+"speed": 10.0
 } ]
 
 [sub_resource type="SpriteFrames" id=6]
@@ -1225,11 +1225,6 @@ animations = [ {
 "name": "5",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 616 ), ExtResource( 617 ), ExtResource( 565 ), ExtResource( 566 ), ExtResource( 576 ), ExtResource( 567 ), ExtResource( 577 ), ExtResource( 618 ), ExtResource( 578 ), ExtResource( 579 ), ExtResource( 629 ), ExtResource( 630 ), ExtResource( 631 ), ExtResource( 632 ), ExtResource( 633 ), ExtResource( 634 ), ExtResource( 826 ), ExtResource( 795 ), ExtResource( 789 ), ExtResource( 794 ), ExtResource( 811 ), ExtResource( 820 ), ExtResource( 803 ), ExtResource( 796 ), ExtResource( 812 ), ExtResource( 797 ), ExtResource( 843 ), ExtResource( 836 ), ExtResource( 850 ), ExtResource( 829 ), ExtResource( 841 ), ExtResource( 806 ), ExtResource( 840 ), ExtResource( 823 ), ExtResource( 844 ), ExtResource( 802 ), ExtResource( 842 ), ExtResource( 851 ), ExtResource( 845 ), ExtResource( 837 ), ExtResource( 793 ), ExtResource( 846 ), ExtResource( 831 ), ExtResource( 830 ), ExtResource( 801 ), ExtResource( 799 ), ExtResource( 798 ), ExtResource( 838 ), ExtResource( 847 ), ExtResource( 818 ) ],
-"loop": false,
-"name": "4",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 687 ), ExtResource( 648 ), ExtResource( 649 ), ExtResource( 661 ), ExtResource( 688 ), ExtResource( 650 ), ExtResource( 691 ), ExtResource( 669 ), ExtResource( 663 ), ExtResource( 692 ), ExtResource( 668 ), ExtResource( 651 ), ExtResource( 694 ), ExtResource( 698 ), ExtResource( 695 ), ExtResource( 665 ), ExtResource( 666 ), ExtResource( 670 ), ExtResource( 699 ), ExtResource( 671 ), ExtResource( 700 ), ExtResource( 701 ), ExtResource( 716 ), ExtResource( 712 ), ExtResource( 713 ), ExtResource( 717 ), ExtResource( 711 ), ExtResource( 721 ), ExtResource( 723 ), ExtResource( 718 ), ExtResource( 722 ), ExtResource( 715 ), ExtResource( 714 ), ExtResource( 719 ), ExtResource( 720 ), ExtResource( 556 ), ExtResource( 563 ), ExtResource( 562 ), ExtResource( 559 ), ExtResource( 557 ), ExtResource( 558 ), ExtResource( 564 ), ExtResource( 561 ), ExtResource( 560 ), ExtResource( 637 ), ExtResource( 638 ), ExtResource( 569 ), ExtResource( 624 ), ExtResource( 590 ), ExtResource( 594 ) ],
 "loop": false,
 "name": "2",
@@ -1238,11 +1233,6 @@ animations = [ {
 "frames": [ ExtResource( 945 ), ExtResource( 968 ), ExtResource( 947 ), ExtResource( 979 ), ExtResource( 960 ), ExtResource( 967 ), ExtResource( 951 ), ExtResource( 969 ), ExtResource( 975 ), ExtResource( 931 ), ExtResource( 955 ), ExtResource( 976 ), ExtResource( 977 ), ExtResource( 944 ), ExtResource( 961 ), ExtResource( 920 ), ExtResource( 921 ), ExtResource( 970 ), ExtResource( 950 ), ExtResource( 956 ), ExtResource( 938 ), ExtResource( 948 ), ExtResource( 949 ), ExtResource( 919 ), ExtResource( 957 ), ExtResource( 929 ), ExtResource( 922 ), ExtResource( 952 ), ExtResource( 953 ), ExtResource( 978 ), ExtResource( 916 ), ExtResource( 954 ), ExtResource( 971 ), ExtResource( 966 ), ExtResource( 958 ), ExtResource( 962 ), ExtResource( 959 ), ExtResource( 934 ), ExtResource( 918 ), ExtResource( 932 ), ExtResource( 963 ), ExtResource( 964 ), ExtResource( 965 ), ExtResource( 972 ), ExtResource( 933 ), ExtResource( 935 ), ExtResource( 973 ), ExtResource( 917 ), ExtResource( 923 ), ExtResource( 936 ) ],
 "loop": false,
 "name": "8",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 925 ), ExtResource( 926 ), ExtResource( 940 ), ExtResource( 927 ), ExtResource( 928 ), ExtResource( 937 ), ExtResource( 942 ), ExtResource( 939 ), ExtResource( 996 ), ExtResource( 980 ), ExtResource( 988 ), ExtResource( 1001 ), ExtResource( 992 ), ExtResource( 1002 ), ExtResource( 981 ), ExtResource( 990 ), ExtResource( 999 ), ExtResource( 993 ), ExtResource( 1003 ), ExtResource( 1000 ), ExtResource( 998 ), ExtResource( 987 ), ExtResource( 986 ), ExtResource( 994 ), ExtResource( 995 ), ExtResource( 1005 ), ExtResource( 997 ), ExtResource( 989 ), ExtResource( 1004 ), ExtResource( 982 ), ExtResource( 983 ), ExtResource( 984 ), ExtResource( 985 ), ExtResource( 991 ), ExtResource( 737 ), ExtResource( 735 ), ExtResource( 728 ), ExtResource( 761 ), ExtResource( 762 ), ExtResource( 756 ), ExtResource( 765 ), ExtResource( 767 ), ExtResource( 727 ), ExtResource( 730 ), ExtResource( 757 ), ExtResource( 782 ), ExtResource( 752 ), ExtResource( 759 ), ExtResource( 736 ), ExtResource( 726 ) ],
-"loop": false,
-"name": "9",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 581 ), ExtResource( 591 ), ExtResource( 574 ), ExtResource( 608 ), ExtResource( 593 ), ExtResource( 595 ), ExtResource( 596 ), ExtResource( 597 ), ExtResource( 609 ), ExtResource( 613 ), ExtResource( 606 ), ExtResource( 582 ), ExtResource( 570 ), ExtResource( 622 ), ExtResource( 598 ), ExtResource( 619 ), ExtResource( 612 ), ExtResource( 607 ), ExtResource( 610 ), ExtResource( 580 ), ExtResource( 599 ), ExtResource( 592 ), ExtResource( 600 ), ExtResource( 601 ), ExtResource( 583 ), ExtResource( 602 ), ExtResource( 584 ), ExtResource( 585 ), ExtResource( 623 ), ExtResource( 620 ), ExtResource( 603 ), ExtResource( 575 ), ExtResource( 615 ), ExtResource( 586 ), ExtResource( 572 ), ExtResource( 587 ), ExtResource( 627 ), ExtResource( 625 ), ExtResource( 588 ), ExtResource( 571 ), ExtResource( 604 ), ExtResource( 589 ), ExtResource( 605 ), ExtResource( 611 ), ExtResource( 568 ), ExtResource( 614 ), ExtResource( 573 ), ExtResource( 621 ), ExtResource( 626 ), ExtResource( 628 ) ],
@@ -1269,13 +1259,23 @@ animations = [ {
 "loop": false,
 "name": "0",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 925 ), ExtResource( 926 ), ExtResource( 940 ), ExtResource( 927 ), ExtResource( 928 ), ExtResource( 937 ), ExtResource( 942 ), ExtResource( 939 ), ExtResource( 996 ), ExtResource( 980 ), ExtResource( 988 ), ExtResource( 1001 ), ExtResource( 992 ), ExtResource( 1002 ), ExtResource( 981 ), ExtResource( 990 ), ExtResource( 999 ), ExtResource( 993 ), ExtResource( 1003 ), ExtResource( 1000 ), ExtResource( 998 ), ExtResource( 987 ), ExtResource( 986 ), ExtResource( 994 ), ExtResource( 995 ), ExtResource( 1005 ), ExtResource( 997 ), ExtResource( 989 ), ExtResource( 1004 ), ExtResource( 982 ), ExtResource( 983 ), ExtResource( 984 ), ExtResource( 985 ), ExtResource( 991 ), ExtResource( 737 ), ExtResource( 735 ), ExtResource( 728 ), ExtResource( 761 ), ExtResource( 762 ), ExtResource( 756 ), ExtResource( 765 ), ExtResource( 767 ), ExtResource( 727 ), ExtResource( 730 ), ExtResource( 757 ), ExtResource( 782 ), ExtResource( 752 ), ExtResource( 759 ), ExtResource( 736 ), ExtResource( 726 ) ],
+"loop": false,
+"name": "9",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 616 ), ExtResource( 617 ), ExtResource( 565 ), ExtResource( 566 ), ExtResource( 576 ), ExtResource( 567 ), ExtResource( 577 ), ExtResource( 618 ), ExtResource( 578 ), ExtResource( 579 ), ExtResource( 629 ), ExtResource( 630 ), ExtResource( 631 ), ExtResource( 632 ), ExtResource( 633 ), ExtResource( 634 ), ExtResource( 826 ), ExtResource( 795 ), ExtResource( 789 ), ExtResource( 794 ), ExtResource( 811 ), ExtResource( 820 ), ExtResource( 803 ), ExtResource( 796 ), ExtResource( 812 ), ExtResource( 797 ), ExtResource( 843 ), ExtResource( 836 ), ExtResource( 850 ), ExtResource( 829 ), ExtResource( 841 ), ExtResource( 806 ), ExtResource( 840 ), ExtResource( 823 ), ExtResource( 844 ), ExtResource( 802 ), ExtResource( 842 ), ExtResource( 851 ), ExtResource( 845 ), ExtResource( 837 ), ExtResource( 793 ), ExtResource( 846 ), ExtResource( 831 ), ExtResource( 830 ), ExtResource( 801 ), ExtResource( 799 ), ExtResource( 798 ), ExtResource( 838 ), ExtResource( 847 ), ExtResource( 818 ) ],
+"loop": false,
+"name": "4",
+"speed": 10.0
 } ]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 1058 ) ],
+"frames": [ ExtResource( 1060 ) ],
 "loop": true,
-"name": "Locked",
+"name": "Available",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1059 ) ],
@@ -1283,22 +1283,22 @@ animations = [ {
 "name": "Unavailable",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1058 ) ],
+"loop": true,
+"name": "Locked",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1069 ), ExtResource( 1062 ), ExtResource( 1070 ), ExtResource( 1065 ), ExtResource( 1064 ), ExtResource( 1066 ) ],
 "loop": false,
 "name": "Upgrade",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 1060 ) ],
-"loop": true,
-"name": "Available",
-"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 1082 ) ],
+"frames": [ ExtResource( 1088 ) ],
 "loop": true,
-"name": "Locked",
+"name": "Available",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1080 ) ],
@@ -1306,22 +1306,22 @@ animations = [ {
 "name": "Unavailable",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1082 ) ],
+"loop": true,
+"name": "Locked",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1101 ), ExtResource( 1102 ), ExtResource( 1079 ), ExtResource( 1085 ), ExtResource( 1063 ), ExtResource( 1099 ) ],
 "loop": false,
 "name": "Upgrade",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 1088 ) ],
-"loop": true,
-"name": "Available",
-"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 1068 ) ],
+"frames": [ ExtResource( 1073 ) ],
 "loop": true,
-"name": "Locked",
+"name": "Available",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1081 ) ],
@@ -1329,22 +1329,22 @@ animations = [ {
 "name": "Unavailable",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1068 ) ],
+"loop": true,
+"name": "Locked",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1071 ), ExtResource( 1072 ), ExtResource( 1061 ), ExtResource( 1074 ), ExtResource( 1067 ), ExtResource( 1075 ) ],
 "loop": false,
 "name": "Upgrade",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 1073 ) ],
-"loop": true,
-"name": "Available",
-"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ ExtResource( 1096 ) ],
+"frames": [ ExtResource( 1090 ) ],
 "loop": true,
-"name": "Locked",
+"name": "Available",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1086 ) ],
@@ -1352,22 +1352,22 @@ animations = [ {
 "name": "Unavailable",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1096 ) ],
+"loop": true,
+"name": "Locked",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1083 ), ExtResource( 1093 ), ExtResource( 1092 ), ExtResource( 1094 ), ExtResource( 1098 ), ExtResource( 1076 ) ],
 "loop": false,
 "name": "Upgrade",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 1090 ) ],
-"loop": true,
-"name": "Available",
-"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ ExtResource( 1077 ) ],
+"frames": [ ExtResource( 1084 ) ],
 "loop": true,
-"name": "Locked",
+"name": "Available",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1095 ) ],
@@ -1375,15 +1375,15 @@ animations = [ {
 "name": "Unavailable",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1077 ) ],
+"loop": true,
+"name": "Locked",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1091 ), ExtResource( 1089 ), ExtResource( 1100 ), ExtResource( 1078 ), ExtResource( 1087 ), ExtResource( 1097 ) ],
 "loop": false,
 "name": "Upgrade",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 1084 ) ],
-"loop": true,
-"name": "Available",
-"speed": 5.0
 } ]
 
 [sub_resource type="DynamicFont" id=12]
@@ -1437,9 +1437,9 @@ font_data = ExtResource( 1104 )
 
 [sub_resource type="SpriteFrames" id=23]
 animations = [ {
-"frames": [ ExtResource( 1113 ) ],
+"frames": [ ExtResource( 1112 ) ],
 "loop": true,
-"name": "Unavailable",
+"name": "Available",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1111 ), ExtResource( 1114 ), ExtResource( 1115 ), ExtResource( 1110 ), ExtResource( 1116 ), ExtResource( 1117 ) ],
@@ -1447,9 +1447,9 @@ animations = [ {
 "name": "Buy",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 1112 ) ],
+"frames": [ ExtResource( 1113 ) ],
 "loop": true,
-"name": "Available",
+"name": "Unavailable",
 "speed": 5.0
 } ]
 
@@ -1761,6 +1761,7 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1118 )
+autoplay = true
 
 [connection signal="exit" from="Player" to="." method="_on_Player_exit"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
