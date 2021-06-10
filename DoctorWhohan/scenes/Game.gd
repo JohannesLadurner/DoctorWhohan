@@ -226,9 +226,9 @@ func checkPlayerInput():
 				inputCoolDownCounter = inputCoolDown
 	
 	if Input.is_action_pressed("Space"):
-		if inputCoolDown > 0 || disappearingNeeds:
+		if inputCoolDownCounter > 0 || disappearingNeeds:
 			return null
-		inputCoolDown = 20
+		inputCoolDownCounter = 20
 		gamePaused = !gamePaused
 		if gamePaused == true:
 			$EnemyTimer.paused = true
